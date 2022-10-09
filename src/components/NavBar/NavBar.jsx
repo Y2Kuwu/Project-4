@@ -7,15 +7,19 @@ export default function NavBar({user, setUser}) {
         userService.logOut();
         setUser(null);
     }
-
+        //if employee == super display my companies and user information
+        //if employee !== super display track record and user information
     return (
         <nav>
-            <Link to="/orders">Order History</Link>
+            <Link to="/MyEnterprises" className = "allEnterprises">My Enterprises</Link>
             &nbsp; | &nbsp;
-            <Link to="/orders/new">New Order</Link>
+            <Link to="/AddEnterprise/new" className = "newEnterprise">Add New Enterprise</Link>
             &nbsp; | &nbsp;
-            <span>Welcome, {user.name}</span>
-            &nbsp;&nbsp; <Link to={""} onClick={handleLogOut}>Logout</Link>
+            <span className = "welcome">Welcome, </span>
+            <Link to= " " className = "userName">{user.name}</Link>
+            &nbsp;&nbsp; <Link to={""} onClick={handleLogOut} className = "logOut">Logout</Link>
         </nav>
+            
+            
     )
 }

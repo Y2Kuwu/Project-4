@@ -22,7 +22,7 @@ function createJWT(user) {
 
 async function login(req, res) {
     try {
-        // first fine the user
+        // first find the user
         const user = await User.findOne({email: req.body.email});
         // if there is no user in the throw an error
         if (!user) throw new Error();

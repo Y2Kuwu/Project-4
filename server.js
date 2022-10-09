@@ -9,8 +9,8 @@ require('dotenv').config();
 require('./config/database');
 
 // Local variables will come in handy for holding retrieved documents
-let user, item, category, order;
-let users, items, categories, orders;
+let user, company, employee, record;
+let users, companies, employees, records;
 
 const app = express();
 
@@ -19,7 +19,7 @@ app.use(express.json());
 
 // Configure both serve-favicon & static middleware
 // to serve from the production 'build' folder
-app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
+
 app.use(express.static(path.join(__dirname, 'build')));
 
 // Middleware to verify token and assign user object of payload to req.user.

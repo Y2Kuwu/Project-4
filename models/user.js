@@ -22,8 +22,8 @@ const userSchema = new Schema({
         trim: true,
         minLength: 3,
         required: true
-    },
-    authority: { type: Schema.Types.ObjectId, ref: 'Employee' }, // added to see if user is CEO or employee
+    }
+    // authority: { type: Schema.Types.ObjectId, ref: 'Employee' }, // added to see if user is CEO or employee
 }, {
     timestamps: true,
     toJSON: {

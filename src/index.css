@@ -166,3 +166,67 @@ button[type="submit"] {
   grid-column: span 2;
   margin: 1vmin 0 0;
 }
+
+nav{
+  outline-style: solid;
+  outline-width: 2px;
+  outline-color: whitesmoke;
+  background-color: skyblue;
+}
+
+
+.allEnterprises{
+  font-family: 'Courier New', Courier, monospace;
+  text-decoration: none;
+  color: black;
+}
+.allEnterprises:hover{
+  color: rgb(46, 77, 131);
+}
+
+.newEnterprise{
+  font-family: 'Courier New', Courier, monospace;
+  text-decoration: none;
+  color: black;
+}
+.newEnterprise:hover{
+  color: rgb(46, 77, 131);
+}
+
+.userName{
+  font-family: 'Courier New', Courier, monospace;
+  text-decoration: none;
+  color: black;
+  text-shadow: .5px .5px blanchedalmond;
+
+}
+.userName:hover{
+  color: rgb(46, 77, 131);
+}
+
+.welcome{
+  font-family: 'Courier New', Courier, monospace;
+  text-decoration: none;
+  color: black;
+}
+.welcome:hover{
+  color: rgb(46, 77, 131);
+}
+
+.logOut{
+  font-family: 'Courier New', Courier, monospace;
+  text-decoration: none;
+  color: black;
+}
+.logOut:hover{
+  color: rgb(46, 77, 131);
+}
+
+.timeOut{
+  font-family: 'Courier New', Courier, monospace;
+  text-decoration: none;
+  color: white;
+  outline-width: 4px;
+  outline-style:groove;
+  outline-color: skyblue;
+}
