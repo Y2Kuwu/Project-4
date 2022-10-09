@@ -18,8 +18,8 @@ function App() {
                 <>
                     <NavBar user={user} setUser={setUser}/>
                     <Routes>
-                        <Route path="/AddEnterprise/new" element={<AddEnterprise/>}/>
-                        <Route path="/MyEnterprises" element={<MyEnterprises/>}/>
+                        <Route path="/AddEnterprise/new" element={<AddEnterprise user={user} setUser={setUser}/>}/>
+                        <Route path="/MyEnterprises" element={<MyEnterprises user={user} setUser={setUser}/>}/>
                     </Routes>
                 </>
                 :

@@ -11,7 +11,7 @@ const employeeSchema = new Schema({
         firstname: {type: String, required: true},
         lastname: {type: String, required: true},
         },
-    // face : {type: Image, required: false},
+    face : {type: Image, required: false},
     role : {
         title :{type: String},
         duties: {type:Array},
@@ -20,14 +20,21 @@ const employeeSchema = new Schema({
     salary: {type: Number},
     credentials: {type:Array},
     
-    record: { type: Schema.Types.ObjectId, ref: 'Record' },
+    user: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+   //record: { type: Schema.Types.ObjectId, ref: 'Record' },
+    isUser: {type: Boolean, default: false},
     isSuper: { type: Boolean, required: true, default: false}
 
     //approval : { app :{type:Number}, dis : {type:Number}, over: {type:Number}
     //trackRecord
 },
 {
-    timestamps : true
+    timestamps : true,
+    toJSON: { virtuals: true }
+})
+
+employeeSchema.virtual('companyUserId').get(function (){
+
 })
 
 module.exports = mongoose.model('Employee' ,employeeSchema)

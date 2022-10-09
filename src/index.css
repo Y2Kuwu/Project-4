@@ -229,4 +229,5 @@ nav{
   outline-width: 4px;
   outline-style:groove;
   outline-color: skyblue;
+  cursor:help;
 }
