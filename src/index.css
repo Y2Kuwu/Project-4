@@ -4,8 +4,8 @@
   --tan-1: #FBF9F6;
   --tan-2: #E7E2DD;
   --tan-3: #E2D9D1;
-  --tan-4: #D3C1AE;
-  --orange: #F67F00;
+  --tan-4: #bebebe;
+  --orange: black;
   --text-light: #968c84;
   --text-dark: #615954;
 }
@@ -27,6 +27,16 @@ body {
   padding: 2vmin;
   height: 100vh;
 }
+.fb{
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 4px 1px 0 #000;
+  text-shadow: -1px -1px 0 rgb(16, 114, 159), 1px -1px 0 black, -1px 1px 0 black, 4px 1px 0 rgb(16, 114, 159);
+  outline-style: solid;
+  background-color: rgb(187, 202, 209);
+  outline-width: 8px;
+  outline-color: rgb(16, 114, 159);
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

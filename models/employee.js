@@ -5,7 +5,7 @@ const employeeSchema = new Schema({
     empID : {
         type: String, 
         max_length: 50,
-        reuired: true},
+        required: true},
     name : {
         firstname: {type: String, required: true},
         lastname: {type: String, required: true},
@@ -26,4 +26,4 @@ const employeeSchema = new Schema({
     timestamps : true
 })
 
-module.exports = mongoose.model(employeeSchema)
+module.exports = mongoose.model('Employee' ,employeeSchema)

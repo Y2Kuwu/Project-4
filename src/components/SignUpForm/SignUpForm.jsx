@@ -22,6 +22,7 @@ export default class SignUpForm extends Component {
         password: '',
         confirm: '',
         error: '',
+        // authority: ''  //change to bool or remove
     }
 
     handleSubmit = async (evt) => {
