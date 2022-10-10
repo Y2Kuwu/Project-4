@@ -1,4 +1,5 @@
 import {checkToken} from "../../utilities/users-service";
+import * as companyAPI from '../../utilities/company-api';
 
 export default function MyEnterprises() {
     async function handleCheckToken() {

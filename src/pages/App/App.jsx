@@ -25,7 +25,7 @@ function App() {
                 </>
                 :
                 <AuthPage setUser={setUser}/>}
-
+        <Route path='/'></>
         </main>
     );
 }
