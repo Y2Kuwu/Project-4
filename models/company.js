@@ -3,7 +3,6 @@ const Schema = mongoose.Schema;
 
 
 const employeeSchema = new Schema({
-    company: { type: Schema.Types.ObjectId, ref: 'Company', required: true },
     name : {
         firstname: {type: String, required: true},
         lastname: {type: String, required: true},
@@ -16,11 +15,7 @@ const employeeSchema = new Schema({
     credentials: {type:Array},
     isUser: {type: Boolean, default: false},
     isSuper: { type: Boolean, required: true, default: false},
-    recordData: {
-        type : [record]
-    }
-
-   
+    // record: recordSchema,
 },
 {
     timestamps : true,
@@ -29,22 +24,33 @@ const employeeSchema = new Schema({
 
 
 const companySchema = new Schema({
+    //connected to user
     user: { type: Schema.Types.ObjectId, ref: 'User', required: true },
     name: {type : String},
     employeeCount: {type: Number},
     currAnnual: {type: Number},
     prevAnnual: {type: Number},
     stock: {type: Number},
-    employeeData: {
-        type: [employeeSchema]
-    }
+    //has array of employees
+    employeeData: [employeeSchema]
+    
 },
 {
     timestamps : true
 })
 
-companySchema.statics.getEmployee = function (userId){
-
-}
 
 module.exports = mongoose.model('Company' , companySchema);
+
+// companySchema.methods.addEmployee = async function(employeeId){
+    // const employee = this;
+    // const currEmployee = employee.employeeData.find(emp => currEmployee.e._id.equals(employeeId))
+    // if (currEmployee){
+    //     currEmployee.qty += 1;
+    //     companySchema.employeeCount.qty += 1;
+    // }else {
+    //     const 
+    // }
+    
+    
+    // }

@@ -36,7 +36,6 @@ function findEmployee(req, res) {
     else {
         return res.json(employee._id);
     }
-    
 }
 
 

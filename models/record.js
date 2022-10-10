@@ -1,10 +1,11 @@
 const mongoose = require('mongoose');
-const employee = require('./employee');
+
 const Schema = mongoose.Schema;
 
 const recordSchema = new Schema({
    
     violations:{
+        employee: { type: Schema.Types.ObjectId, ref: 'employee', required: true },
         count : {type:Number},
         detail : {type:String ,min_length : 50, required: true},
         severity : {type:Number, default : 1, max : 5},
