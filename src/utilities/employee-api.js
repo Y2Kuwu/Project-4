@@ -1,13 +1,12 @@
+import employee from "../../models/employee";
 import sendRequest from "./send-request";
+import * as employeesAPI from './users-api';
 const BASE_URL = '/api/employees';
 
-export async function signUp(userData) {
-    try {
-        const token = await usersAPI.signUp(userData);
-        // save the data to local storage
-        localStorage.setItem('token', token);
-        return getUser();
-    } catch {
-        throw new Error("Invalid Sign Up");
-    }
+export function getEmployee() {
+    return sendRequest(`${BASE_URL}/findEmployee`)
+}
+
+export function createEmployee() {
+    return sendRequest(`${BASE_URL}/createEmployee/${employee}`, 'POST');
 }

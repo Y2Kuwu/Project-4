@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const companySchema = require('./company')
 const Schema = mongoose.Schema;
 
 const SALT_ROUNDS = 6;
@@ -22,6 +23,9 @@ const userSchema = new Schema({
         trim: true,
         minLength: 3,
         required: true
+    },
+    companyData:{
+        type: [companySchema]
     }
     // authority: { type: Schema.Types.ObjectId, ref: 'Employee' }, // added to see if user is CEO or employee
 }, {

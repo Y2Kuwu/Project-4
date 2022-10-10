@@ -3,7 +3,7 @@ const employee = require('./employee');
 const Schema = mongoose.Schema;
 
 const recordSchema = new Schema({
-    recordID : {},
+   
     violations:{
         count : {type:Number},
         detail : {type:String ,min_length : 50, required: true},
@@ -25,6 +25,6 @@ const recordSchema = new Schema({
 {
     timestamps : true
 })
-
-
 module.exports = mongoose.model('Record' , recordSchema);
+
+// recordID : {},
