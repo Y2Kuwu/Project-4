@@ -11,13 +11,13 @@ const employeeSchema = new Schema({
         firstname: {type: String, required: true},
         lastname: {type: String, required: true},
         },
-    face : {type: Image, required: false},
+    // face: {type: new Image, width: 50, height: 50, required: false},
     role : {
         title :{type: String},
         duties: {type:Array},
     },
     age : {type: Date},
-    salary: {type: Number},
+    
     credentials: {type:Array},
     
     user: { type: Schema.Types.ObjectId, ref: 'User', required: true },

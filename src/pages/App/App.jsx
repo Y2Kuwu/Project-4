@@ -2,9 +2,10 @@ import './App.css';
 import {useState} from 'react';
 // Import the following components
 import AuthPage from '../AuthPage/AuthPage';
+
 import AddEnterprise from '../AddEnterprise/AddEnterprise';
 import MyEnterprises from '../MyEnterprises/MyEnterprises';
-import {Routes, Route} from 'react-router-dom';
+import {Routes, Route, Navigate} from 'react-router-dom';
 import NavBar from '../../components/NavBar/NavBar';
 import {getUser} from '../../utilities/users-service';
 

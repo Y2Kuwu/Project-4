@@ -19,8 +19,8 @@ const recordSchema = new Schema({
     updown: {
         promotions: {type:Number},
         demotions: {type:Number}
-    }
-    
+    },
+    salary: {type: Number},
 },
 {
     timestamps : true
