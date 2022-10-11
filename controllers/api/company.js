@@ -2,14 +2,32 @@ const Company = require('../../models/company');
 
 
 
-async function findCompany(req,res){
-    const company = await Company.findById(req.params.id);
+async function getCompany(req,res){
+    const getCompany = await Company.findById(req.params._id);  //or maybe req.body
+    res.json(getCompany);
+}
+
+async function seeCompany(req,res){
+    const company = await Company.seeComp(req.user._id);
     res.json(company)
+}
+
+
+async function createCompany (req,res){
+    try{
+        const createCompany = await Company.create(req.body); // _id
+        res.json(createCompany)
+        }
+        catch (error) {
+            res.status(400).json(error);
+            console.log("failed to create company")
+    }
 }
 
 async function createEmployee (req,res){
     try{
-        return await Employee.create({employeeData});
+        const createEmployee = await Employee.createEmp({employeeData}); //req.body
+        res.json(createEmployee)
         }
         catch (error) {
             res.status(400).json(error);
@@ -17,15 +35,13 @@ async function createEmployee (req,res){
         }
     }
 
-async function createCompany (req,res){
-    try{
-        return await Company.create(req.body);
-        }
-        catch (error) {
-            res.status(400).json(error);
-            console.log("failed to create company")
+
+    async function getEmployee(req,res){
+        const employee = await Employee.findById(req.body);  //or maybe req.body
+        res.json(employee);
     }
-}
+
+
 
 
 
@@ -36,7 +52,9 @@ async function createCompany (req,res){
 module.exports = {
     createCompany,
     createEmployee,
-    findCompany,
+    getEmployee,
+    seeCompany,
+    getCompany,
 }
  // viewEmployee,
  //employeeList,

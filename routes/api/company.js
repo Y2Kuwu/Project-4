@@ -3,9 +3,11 @@ const router = express.Router();
 const CompanyCtrl = require('../../controllers/api/company');
 
 
-router.get('/findCompany', CompanyCtrl.findCompany);
-router.get('/createCompany', CompanyCtrl.createCompany);
-router.get('/createEmployee', CompanyCtrl.createEmployee);
+router.get('/getCompany', CompanyCtrl.getCompany);
+router.get('/getEmployee', CompanyCtrl.getEmployee);
+
+router.post('/createCompany', CompanyCtrl.createCompany);
+router.post('/createEmployee', CompanyCtrl.createEmployee);
 
 
 
