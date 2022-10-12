@@ -13,7 +13,7 @@ export function createCompany(compForm){
 }
 
 export function getCompany() {
-    return sendRequest(`${BASE_URL}/company`);
+    return sendRequest(BASE_URL);
   }
 // export function getEmployee(companyId) {
 //     return sendRequest(`${BASE_URL}/company`);

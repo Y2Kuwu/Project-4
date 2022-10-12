@@ -1,8 +1,5 @@
-import './AddEnterprises.css'
-import { Component, useState } from 'react';
-// import * as companyAPI from '../../utilities/company-api';
-// import LogOut from '../LogOut/LogOut';
-// import Companies from '../CompanyList/CompanyList';
+import './AddEnterprise.css'
+import { Component } from 'react';
 import { createCompany } from '../../utilities/company-api';
 
 export default class CreateCompany extends Component {
@@ -52,14 +49,10 @@ render(){
     <label>CEO</label>  
     <input type="text" name="ceo" value={this.state.ceo} onChange={this.handleChange} required />
     <label>Region(s)</label>  
-    <select>
     <input type = "text" name="regions" value={this.state.regions} onChange={this.handleChange} required />
-    <option value = "here">un</option>
-    </select>
     <label>Number of offices</label>  
     <input type="text" name="officeCount" value={this.state.officeCount} onChange={this.handleChange} required />
             <button type="submit">Create</button>
-    
     </form>
     <p className='infoNote'>Additional information will be required after initial creation</p>
     </div>

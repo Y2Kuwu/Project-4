@@ -17,7 +17,7 @@ async function createCompany (req,res){
             console.log("failed to create company")
     }
 }
-
+// findOne from child model req.params._id push .save()   main 
 
 // async function createEmployee (req,res){
 //     try{
