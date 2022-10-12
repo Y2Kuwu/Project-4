@@ -14,7 +14,7 @@ export default function NavBar({user, setUser}) {
         <nav>
             <Link to="/MyEnterprises" className = "allEnterprises">My Enterprises</Link>
             &nbsp; | &nbsp;
-            <Link to="/AddEnterprise/new" className = "newEnterprise">Add New Enterprise</Link>
+            <Link to="/AddEnterprise" className = "newEnterprise">Add New Enterprise</Link>
             &nbsp; | &nbsp;
             <span className = "welcome">Welcome, </span>
             <Link to= " " className = "userName">{user.name}</Link>

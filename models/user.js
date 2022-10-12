@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const Schema = mongoose.Schema;
-require('./company');
-const companySchema  = require('./company');
-const employeeSchema = require('./company');
+// require('./company');
+// const companySchema  = require('./company');
+// const employeeSchema = require('./company');
 
 const SALT_ROUNDS = 6;
 

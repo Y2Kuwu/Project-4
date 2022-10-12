@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import CompanyList from "../../components/CompanyList/CompanyList";
 import UserLogOut from "../../components/LogOut/LogOut";
 
+
+
 export default function MyEnterprises({user, setUser}) {
     const [companies, setCompanies] = useState([])
     async function handleCheckToken() {
@@ -21,11 +23,12 @@ useEffect(function (){
 
     return (
         <>
-        <CompanyList
-            companies={companies}
-        />
             <h1 className = "allEnterprises">My Enterprises</h1>
             <button className = "timeOut" onClick={handleCheckToken}>Check When My Login Expires</button>
         </>
     );
 }
+
+{/* <CompanyList
+companies={companies}
+/> */}

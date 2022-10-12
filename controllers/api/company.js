@@ -3,20 +3,14 @@ const Company = require('../../models/company');
 
 
 async function getCompany(req,res){
-    const getCompany = await Company.findById(req.params._id);  //or maybe req.body
-    res.json(getCompany);
+    const company = await Company.find({});  //or maybe req.body
+    res.json(company);
 }
-
-async function seeCompany(req,res){
-    const company = await Company.seeComp(req.user._id);
-    res.json(company)
-}
-
 
 async function createCompany (req,res){
     try{
-        const createCompany = await Company.create(req.body); // _id
-        res.json(createCompany)
+        const company = await Company.create(req.body); // _id
+        res.json(company)
         }
         catch (error) {
             res.status(400).json(error);
@@ -24,22 +18,23 @@ async function createCompany (req,res){
     }
 }
 
-async function createEmployee (req,res){
-    try{
-        const createEmployee = await Employee.createEmp({employeeData}); //req.body
-        res.json(createEmployee)
-        }
-        catch (error) {
-            res.status(400).json(error);
-            console.log("failed to create employee")
-        }
-    }
+
+// async function createEmployee (req,res){
+//     try{
+//         const createEmployee = await Employee.createEmp({employeeData}); //req.body
+//         res.json(createEmployee)
+//         }
+//         catch (error) {
+//             res.status(400).json(error);
+//             console.log("failed to create employee")
+//         }
+//     }
 
 
-    async function getEmployee(req,res){
-        const employee = await Employee.findById(req.body);  //or maybe req.body
-        res.json(employee);
-    }
+//     async function getEmployee(req,res){
+//         const employee = await Employee.findById(req.body);  //or maybe req.body
+//         res.json(employee);
+//     }
 
 
 
@@ -51,9 +46,8 @@ async function createEmployee (req,res){
 
 module.exports = {
     createCompany,
-    createEmployee,
-    getEmployee,
-    seeCompany,
+    // createEmployee,
+    // getEmployee,
     getCompany,
 }
  // viewEmployee,

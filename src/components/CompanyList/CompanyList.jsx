@@ -16,3 +16,6 @@ export default function CompanyList({companies, myCompanies, setCompanies}){
         </ul>
         );
 }
+
+
+//onclick handler
