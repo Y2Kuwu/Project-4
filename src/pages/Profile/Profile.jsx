@@ -6,9 +6,7 @@ export default function tokenTime({user, setUser}) {  //change params
         const expDate = await checkToken();
         alert(`Expiration date is ${expDate}`);
     }
-//  function companyList ({comps}){
-
-
+    
     return (
         
         <>

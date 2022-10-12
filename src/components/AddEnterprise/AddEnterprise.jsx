@@ -2,15 +2,16 @@ import './AddEnterprise.css'
 import { Component } from 'react';
 import { createCompany } from '../../utilities/company-api';
 
+
 export default class CreateCompany extends Component {
   state = {
-  
     name: '',
     stockSymbol: '',
     ceo: '',
     regions: '',
     officeCount: '',
   };
+
 
 
 handleChange = (evt) => {

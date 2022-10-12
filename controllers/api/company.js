@@ -7,17 +7,48 @@ async function getCompany(req,res){
     res.json(company);
 }
 
-async function createCompany (req,res){
+// async function createEmployee (req,res){  //use this for employee (global)
+//     try{
+//         const company = await Company.create(req.body); // _id
+//         res.json(company)
+//         }
+//         catch (error) {
+//             res.status(400).json(error);
+//             console.log("failed to create company")
+//     }
+// }
+// findOne from child model req.params._id push .save()   main 
+
+async function searchCompanies (req, res){
+
+}
+
+
+async function createCompany (req, res){
     try{
-        const company = await Company.create(req.body); // _id
-        res.json(company)
-        }
-        catch (error) {
-            res.status(400).json(error);
-            console.log("failed to create company")
+    req.body.user = req.user._id;  //ensures the user is legit matches by user._id
+    const company = await Company.create(req.body);
+    console.log(req.body)
+    res.json(company)
+    }   
+    catch(error){
+        res.status(400).json(error);
+        alert("Failed to create new company")
     }
 }
-// findOne from child model req.params._id push .save()   main 
+
+async function deleteCompany (req, res){
+    try{
+    const company = await Company.deleteOne(req.body);
+    console.log(req.body)
+    res.json(company)
+    }   
+    catch(error){
+        res.status(400).json(error);
+        alert("Failed to delete company")
+    }
+}
+
 
 // async function createEmployee (req,res){
 //     try{
@@ -49,6 +80,7 @@ module.exports = {
     // createEmployee,
     // getEmployee,
     getCompany,
+    deleteCompany,
 }
  // viewEmployee,
  //employeeList,

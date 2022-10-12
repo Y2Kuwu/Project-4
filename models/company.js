@@ -25,7 +25,7 @@ const Schema = mongoose.Schema;
 
 const companySchema = new Schema({
     //connected to user
-    // user: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+    user: { type: Schema.Types.ObjectId, ref: 'User', required: true },
     name: {type : String},
     stockSymbol: {type : String},
     ceo: {
