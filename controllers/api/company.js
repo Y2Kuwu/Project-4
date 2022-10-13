@@ -1,28 +1,11 @@
 const Company = require('../../models/company');
-
+// const Employee = require('../../models/company');
 
 
 async function getCompany(req,res){
     const company = await Company.find({});  //or maybe req.body
     res.json(company);
 }
-
-// async function createEmployee (req,res){  //use this for employee (global)
-//     try{
-//         const company = await Company.create(req.body); // _id
-//         res.json(company)
-//         }
-//         catch (error) {
-//             res.status(400).json(error);
-//             console.log("failed to create company")
-//     }
-// }
-// findOne from child model req.params._id push .save()   main 
-
-async function searchCompanies (req, res){
-    
-}
-
 
 async function createCompany (req, res){
     try{
@@ -36,6 +19,7 @@ async function createCompany (req, res){
         console.log("Failed to create new company")
     }
 }
+
 async function deleteCompany (req, res){
     try{
         // {_id: req.params.id, user: req.user._id}
@@ -49,19 +33,51 @@ async function deleteCompany (req, res){
     }
 }
 
+async function detailCompany (req, res){
+    try{
+        const company = await Company.findById(req.params._id);
+        console.log(req.body);
+        res.json(company)
+    }
+    catch(error){
+        res.status(400).json(error);
+        console.log("Cannot find company details")
+    }
+}
 
-// async function createEmployee (req,res){
-//     try{
-//         const createEmployee = await Employee.createEmp({employeeData}); //req.body
-//         res.json(createEmployee)
-//         }
-//         catch (error) {
-//             res.status(400).json(error);
-//             console.log("failed to create employee")
-//         }
-//     }
+async function updateCompany (req, res){
+    try{
+        const company = await Company.findByIdAndUpdate(req.params.id);
+        console.log(req.params.id);
+        res.json(company.id)
+    }
+    catch(error){
+        res.status(400).json(error);
+        console.log("Cannot find company details")
+    }
+}
 
+async function createEmployee (req,res){
+    try{
+        req.body.user = req.user._id;
+        const employee = await Employee.create(req.body);
+        console.log(req.body)
+        res.json(employee)
+        }   
+        catch(error){
+            res.status(400).json(error);
+            console.log("Failed to create new employee")
+        }
+    }
 
+    module.exports = {
+        createCompany,
+        createEmployee,
+        // getEmployee,
+        getCompany,
+        deleteCompany,
+        detailCompany,
+    }
 //     async function getEmployee(req,res){
 //         const employee = await Employee.findById(req.body);  //or maybe req.body
 //         res.json(employee);
@@ -75,13 +91,7 @@ async function deleteCompany (req, res){
 
 // }
 
-module.exports = {
-    createCompany,
-    // createEmployee,
-    // getEmployee,
-    getCompany,
-    deleteCompany,
-}
+
  // viewEmployee,
  //employeeList,
  // addEmployee,
@@ -98,4 +108,23 @@ module.exports = {
 //     }catch{
 
 //     }
+// }
+
+
+
+
+// async function createEmployee (req,res){  //use this for employee (global)
+//     try{
+//         const company = await Company.create(req.body); // _id
+//         res.json(company)
+//         }
+//         catch (error) {
+//             res.status(400).json(error);
+//             console.log("failed to create company")
+//     }
+// }
+// findOne from child model req.params._id push .save()   main 
+
+// async function searchCompanies (req, res){
+    
 // }

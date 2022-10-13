@@ -1,9 +1,8 @@
 import './AddEnterprise.css'
 import { Component } from 'react';
 import { createCompany} from '../../utilities/company-api';
-import MyEnterprises from '../../pages/MyEnterprises/MyEnterprises';
-import { Route } from 'react-router-dom';
-import { redirect } from 'react-router-dom';
+// import { Route } from 'react-router-dom';
+// import { redirect } from 'react-router-dom';
 
 export default class CreateCompany extends Component {
   state = {
@@ -30,11 +29,9 @@ handleSubmit = async (evt) => {
    
     const compForm = { ...this.state };
     const company = await createCompany(compForm);
-    // Baby step 
     this.props.setCompany(company);
    
   } catch {
-    // An error happened on the server
     this.setState({ error: 'Company creation failed' });
   }
 };
@@ -46,7 +43,7 @@ render(){
     <h1 className = "newEnterprise">New Enterprise</h1>
     <form autoComplete="off" onSubmit={this.handleSubmit}>
     <label>Name</label>
-    <input type="text" name="name" value={this.state.name} onChange={this.handleChange} required />
+    <input type="text" name="name" value={this.props.name} onChange={this.handleChange} required />
     <label>Stock ID</label>  
     <input type="text" name="stockSymbol" value={this.state.stockSymbol} onChange={this.handleChange} required />
     <label>CEO</label>  
@@ -57,6 +54,7 @@ render(){
     <input type="text" name="officeCount" value={this.state.officeCount} onChange={this.handleChange} required />
             <button type="submit" id = "sub">Create</button>
           
+  
             
     </form>
     <p className='infoNote'>Additional information will be required after initial creation</p>

@@ -7,14 +7,20 @@ const BASE_URL = '/api/company';
 // }
 
 export function createCompany(compForm){
-  
-  // return sendRequest(`${BASE_URL}/createCompany`, 'POST', compForm );
   return sendRequest(BASE_URL, 'POST', compForm );
+}
+
+export function createEmployee(employeeForm){
+  return sendRequest(BASE_URL, 'POST', employeeForm );
 }
 
 export function getCompany() {
     return sendRequest(BASE_URL);
   }
+
+export function detailCompany(id) {
+  return sendRequest(`${BASE_URL}/${id}`)
+}
 // export function getEmployee(companyId) {
 //     return sendRequest(`${BASE_URL}/company`);
 //   }

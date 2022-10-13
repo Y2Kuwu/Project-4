@@ -1,25 +1,34 @@
 import { useState, useEffect } from 'react';
+import { redirect } from 'react-router-dom';
 import * as companyAPI from "../../utilities/company-api";
+import CreateCompany from '../AddEnterprise/AddEnterprise';
 
+export default function MyEnterprises(props) {
+    const [companies, setCompanies] = useState([]);
 
-export default function MyEnterprises({ user }) {
-const [companies, setCompanies] = useState([]);
-
-    
 
   useEffect(() =>{
     async function getCompanies() {
       const companies = await companyAPI.getCompany();
       setCompanies(companies);
-      console.log(companies)
+      // console.log(companies)
     }
     getCompanies();
   }, [])
 
   async function deleteCompanies(id){
     const deleteComp = await companyAPI.deleteCompany(id);
-    window.location.reload();
+    window.location.reload()
   }
+  async function companyDetails(id){
+    const detailComp = await companyAPI.detailCompany(id);
+    // return(companies[index].values)
+    // console.log(this.company._id) 
+    // console.log(companies.state)
+    console.log(companies.id);
+   //console.log(companies.push)employees
+  }
+  
 
 
   return (
@@ -28,7 +37,8 @@ const [companies, setCompanies] = useState([]);
       <h1 className='allEnterprises'>Companies</h1>
       {companies.map((company, index) => 
         <div>
-          <ul>{company.name}{company.stockSymbol}<button className='destroy' onClick={(handleChange) => {deleteCompanies(company._id)}}>Delete</button></ul>
+          <ul>{company.name} <button className='details' onClick={(handleChange) => {companyDetails(company._id)}}>Details</button> <button className='delete' onClick={(handleChange) => {deleteCompanies(company.id)}}>Delete</button> </ul>
+          <ul></ul>
         </div>)}
     </>);
 }

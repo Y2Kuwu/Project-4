@@ -1,5 +1,5 @@
 import {Component} from 'react';
-import { Navigate } from 'react-router-dom';
+// import { Navigate } from 'react-router-dom';
 // import { Navigate } from 'react-router-dom';
 
 import {signUp} from '../../utilities/users-service';
@@ -54,16 +54,17 @@ export default class SignUpForm extends Component {
             error: ''
         });
     };
-
+ //use line 63-66 to nav for first time users */
     render() {
         const disable = this.state.password !== this.state.confirm;
         return (
             
             <div>
                 <div className="form-container">
-                {user &&
-                <Navigate to = "EmployeeInit" replace = {true}/>
-                }
+                {/* {user &&
+                <Navigate to = "EmployeeInit" replace = {true}/>  
+                } */}
+                
                     <form autoComplete="off" onSubmit={(evt)=> this.handleSubmit(evt)}>
                         <label>Name</label>
                         <input type="text" name="name" value={this.state.name} onChange={this.handleChange} required/>
