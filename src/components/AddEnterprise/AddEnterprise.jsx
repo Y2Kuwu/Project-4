@@ -1,6 +1,6 @@
 import './AddEnterprise.css'
 import { Component } from 'react';
-import { createCompany } from '../../utilities/company-api';
+import { createCompany} from '../../utilities/company-api';
 
 
 export default class CreateCompany extends Component {
@@ -35,6 +35,7 @@ handleSubmit = async (evt) => {
     this.setState({ error: 'Company creation failed' });
   }
 };
+
 
 
 

@@ -20,7 +20,7 @@ async function getCompany(req,res){
 // findOne from child model req.params._id push .save()   main 
 
 async function searchCompanies (req, res){
-
+    
 }
 
 
@@ -33,19 +33,19 @@ async function createCompany (req, res){
     }   
     catch(error){
         res.status(400).json(error);
-        alert("Failed to create new company")
+        console.log("Failed to create new company")
     }
 }
-
 async function deleteCompany (req, res){
     try{
-    const company = await Company.deleteOne(req.body);
+        // {_id: req.params.id, user: req.user._id}
+    const company = await Company.findByIdAndDelete(req.params.id);
     console.log(req.body)
     res.json(company)
     }   
     catch(error){
         res.status(400).json(error);
-        alert("Failed to delete company")
+        console.log("Failed to delete company")
     }
 }
 
