@@ -1,4 +1,3 @@
-import { render } from '@testing-library/react';
 import { useState, useEffect } from 'react';
 import * as companyAPI from "../../utilities/company-api";
 
@@ -6,6 +5,7 @@ import * as companyAPI from "../../utilities/company-api";
 export default function MyEnterprises({ user }) {
 const [companies, setCompanies] = useState([]);
 
+    
 
   useEffect(() =>{
     async function getCompanies() {
@@ -18,7 +18,7 @@ const [companies, setCompanies] = useState([]);
 
   async function deleteCompanies(id){
     const deleteComp = await companyAPI.deleteCompany(id);
-
+    window.location.reload();
   }
 
 
@@ -28,7 +28,7 @@ const [companies, setCompanies] = useState([]);
       <h1 className='allEnterprises'>Companies</h1>
       {companies.map((company, index) => 
         <div>
-          <p>{company.name}{company.stockSymbol}<button className='destroy' onClick={() => {deleteCompanies(company._id)}}>Delete</button></p>
+          <ul>{company.name}{company.stockSymbol}<button className='destroy' onClick={(handleChange) => {deleteCompanies(company._id)}}>Delete</button></ul>
         </div>)}
     </>);
 }

@@ -32,7 +32,6 @@ function App() {
                     <Routes>
                         <Route path="/AddEnterprise" element={<AddEnterprise user={user} setUser={setUser}/>}/>
                         <Route path="/MyEnterprise" element={<MyEnterprise user={user} setUser={setUser}/>}/>
-                        
                     </Routes>
                     
                     {/* <CompanyList company={company} setCompany={setCompany}/>

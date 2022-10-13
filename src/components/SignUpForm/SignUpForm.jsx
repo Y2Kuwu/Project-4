@@ -1,4 +1,5 @@
 import {Component} from 'react';
+import { Navigate } from 'react-router-dom';
 // import { Navigate } from 'react-router-dom';
 
 import {signUp} from '../../utilities/users-service';
@@ -36,7 +37,9 @@ export default class SignUpForm extends Component {
             delete formData.error;
             delete formData.confirm;
             const user = await signUp(formData);
+            this.setState(user);
             this.props.setUser(user);
+
             // return <Navigate replace to ="/AddEnterprise/new"/>
         } catch {
             this.setState({
@@ -58,7 +61,10 @@ export default class SignUpForm extends Component {
             
             <div>
                 <div className="form-container">
-                    <form autoComplete="off" onSubmit={this.handleSubmit}>
+                {user &&
+                <Navigate to = "EmployeeInit" replace = {true}/>
+                }
+                    <form autoComplete="off" onSubmit={(evt)=> this.handleSubmit(evt)}>
                         <label>Name</label>
                         <input type="text" name="name" value={this.state.name} onChange={this.handleChange} required/>
                         <label>Email</label>
@@ -71,9 +77,10 @@ export default class SignUpForm extends Component {
                         <input type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange}
                                required/>
                         <button type="submit" disabled={disable}>SIGN UP</button>
+                        
                     </form>
                 </div>
-                
+
                 <p className="error-message">&nbsp;{this.state.error}</p>
             </div>
             

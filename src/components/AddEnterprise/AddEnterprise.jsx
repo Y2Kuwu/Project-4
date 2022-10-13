@@ -1,7 +1,9 @@
 import './AddEnterprise.css'
 import { Component } from 'react';
 import { createCompany} from '../../utilities/company-api';
-
+import MyEnterprises from '../../pages/MyEnterprises/MyEnterprises';
+import { Route } from 'react-router-dom';
+import { redirect } from 'react-router-dom';
 
 export default class CreateCompany extends Component {
   state = {
@@ -17,6 +19,7 @@ export default class CreateCompany extends Component {
 handleChange = (evt) => {
   this.setState({
     [evt.target.name]: evt.target.value,
+    
     error: ''
   });
 };
@@ -26,17 +29,15 @@ handleSubmit = async (evt) => {
   try {
    
     const compForm = { ...this.state };
-    
     const company = await createCompany(compForm);
     // Baby step 
     this.props.setCompany(company);
+   
   } catch {
     // An error happened on the server
     this.setState({ error: 'Company creation failed' });
   }
 };
-
-
 
 
 render(){
@@ -54,7 +55,9 @@ render(){
     <input type = "text" name="regions" value={this.state.regions} onChange={this.handleChange} required />
     <label>Number of offices</label>  
     <input type="text" name="officeCount" value={this.state.officeCount} onChange={this.handleChange} required />
-            <button type="submit">Create</button>
+            <button type="submit" id = "sub">Create</button>
+          
+            
     </form>
     <p className='infoNote'>Additional information will be required after initial creation</p>
     </div>
@@ -62,21 +65,3 @@ render(){
     );
   }
 }
-
-
-
-
-
-
-
-// formData.confirm;
-    // delete formData.error;
-    // The promise returned by the signUp service method
-    // will resolve to the user object included in the 
-    // payload of the JSON Web Token (JWT)
-
-
-
-
-
-    
