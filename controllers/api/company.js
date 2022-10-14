@@ -35,7 +35,8 @@ async function deleteCompany (req, res){
 
 async function detailCompany (req, res){
     try{
-        const company = await Company.findById({'company._id': req.params._id});
+        //'company._id': 
+        const company = await Company.findById(req.params.id);
         console.log(req.body);
         res.json(company)
     }
