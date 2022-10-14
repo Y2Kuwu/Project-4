@@ -11,7 +11,7 @@ export default function MyEnterprises(props) {
     async function getCompanies() {
       const companies = await companyAPI.getCompany();
       setCompanies(companies);
-      // console.log(companies)
+      
     }
     getCompanies();
   }, [])
@@ -22,15 +22,11 @@ export default function MyEnterprises(props) {
   }
   async function companyDetails(id){
     const detailComp = await companyAPI.detailCompany(id);
-    //return(companies[index].values)
-    //console.log(this.company._id) 
-    //console.log(companies.state)
+    
     console.log(companies.id);
-   //console.log(companies.push)employees
+  
   }
   
-
-
   return (
     <div className='companyWrapWrap'>
 
@@ -42,15 +38,3 @@ export default function MyEnterprises(props) {
         </div>)}
     </div>);
 }
-
-
- // return <p>{company.name}{company.stockSymbol}<button onClick={()=> del(index)}>remove</button></p>
-
-//  useEffect(function() {
-//     async function getCompanies() {
-//       const companies = await companyAPI.getCompany();
-//       setCompanies(companies);
-//       console.log(companies)
-//     }
-//     getCompanies();
-//   }, [])

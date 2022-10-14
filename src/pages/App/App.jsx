@@ -12,7 +12,7 @@ import NavBar from '../../components/NavBar/NavBar';
 import AddEnterprise from '../../components/AddEnterprise/AddEnterprise';
 import CreateEmployee from '../../components/CreateEmployee/CreateEmployee';
 import {getUser} from '../../utilities/users-service';
-
+import {logOut} from '../../components/LogOut/LogOut';
 
 
 

@@ -5,5 +5,4 @@ function passSecret(req, user){
 
 module.exports = {
     passSecret,
-     
 }

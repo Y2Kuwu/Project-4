@@ -39,24 +39,28 @@ handleSubmit = async (evt) => {
 render(){
   return (
     <div>
+   
+    <div className='createEmp'>
     <h1 className = "newEmployee">Onboard Employee</h1>
     <form autoComplete="off" onSubmit={this.handleSubmit}>
-    <label>First name</label>
-    <input type="text" name="firstName" value={this.state.firstName} onChange={this.handleChange} required />
-    <label>Last name</label>  
-    <input type="text" name="lastName" value={this.state.lastName} onChange={this.handleChange} required />
-    <label>Title</label>  
-    <input type="text" name="title" value={this.state.title} onChange={this.handleChange} required />
-    <label>Duties</label>  
-    <input type = "text" name="duties" value={this.state.duties} onChange={this.handleChange} required />
-    <label>DOB</label>  
-    <input type="text" name="dob" value={this.state.dob} onChange={this.handleChange} required />
-    <label>Credential list</label>  
-    <input type="text" name="credentials" value={this.state.credentials} onChange={this.handleChange} required />
-            <button type="submit">Create</button>   
+    <label className = "empLabels">First name</label>
+    <input type="text" name="firstName" className = "empFields" value={this.state.firstName} onChange={this.handleChange} required />
+    <label className = "empLabels">Last name</label>  
+    <input type="text" name="lastName" className = "empFields" value={this.state.lastName} onChange={this.handleChange} required />
+    <label className = "empLabels">Title</label>  
+    <input type="text" name="title" className = "empFields" value={this.state.title} onChange={this.handleChange} required />
+    <label className = "empLabels">Duties</label>  
+    <input type = "text" name="duties" className = "empFields" value={this.state.duties} onChange={this.handleChange} required />
+    <label className = "empLabels">DOB</label>  
+    <input type="text" name="dob" className = "empFields" value={this.state.dob} onChange={this.handleChange} required />
+    <label className = "empLabels">Credential list</label>  
+    <input type="text" name="credentials" className = "empFields" value={this.state.credentials} onChange={this.handleChange} required />
+            <button type="submit" id= "sub">Create</button>   
     </form>
+    <p className='infoNote'>Additional information will be required after initial creation</p>
     </div>
     
+    </div>
     );
   }
 }

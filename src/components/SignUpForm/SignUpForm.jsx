@@ -1,28 +1,16 @@
 import {Component} from 'react';
 // import { Navigate } from 'react-router-dom';
-// import { Navigate } from 'react-router-dom';
+
 
 import {signUp} from '../../utilities/users-service';
 
 
 export default class SignUpForm extends Component {
-    // // state is always an object with a property for each "piece" of state
-    // constructor() {
-    //   super();
-    //   this.state = {
-    //     name: '',
-    //     email: '',
-    //     password: '',
-    //     confirm: '',
-    //     error: ''
-    //   };
-    //   this.handleChange = this.handleChange.bind(this)
-    // }
+   
 
     state = {
         name: '',
         email: '',
-        // authority: '',  //change to bool or remove
         password: '',
         confirm: '',
         error: '',
@@ -39,11 +27,10 @@ export default class SignUpForm extends Component {
             const user = await signUp(formData);
             this.setState(user);
             this.props.setUser(user);
-
-            // return <Navigate replace to ="/AddEnterprise/new"/>
         } catch {
             this.setState({
                 error: 'Sign Up Failed - Try Again'
+                //add error page
             });
         }
     }
@@ -64,20 +51,20 @@ export default class SignUpForm extends Component {
                 {/* {user &&
                 <Navigate to = "EmployeeInit" replace = {true}/>  
                 } */}
-                
+                    
                     <form autoComplete="off" onSubmit={(evt)=> this.handleSubmit(evt)}>
-                        <label>Name</label>
-                        <input type="text" name="name" value={this.state.name} onChange={this.handleChange} required/>
-                        <label>Email</label>
-                        <input type="email" name="email" value={this.state.email} onChange={this.handleChange}
+                        <label className = "loginLabels">Name</label>
+                        <input type="text" name="name" className = "loginVals" value={this.state.name} onChange={this.handleChange} required/>
+                        <label className = "loginLabels">Email</label>
+                        <input type="email" name="email" className = "loginVals" value={this.state.email} onChange={this.handleChange}
                                required/>
-                        <label>Password</label>
-                        <input type="password" name="password" value={this.state.password} onChange={this.handleChange}
+                        <label className = "loginLabels">Password</label>
+                        <input type="password" name="password" className = "loginVals" value={this.state.password} onChange={this.handleChange}
                                required/>
-                        <label>Confirm</label>
-                        <input type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange}
+                        <label className = "loginLabels">Confirm</label>
+                        <input type="password" name="confirm"className = "loginVals" value={this.state.confirm} onChange={this.handleChange}
                                required/>
-                        <button type="submit" disabled={disable}>SIGN UP</button>
+                        <button type="submit" className = "login" disabled={disable}>SIGN UP</button>
                         
                     </form>
                 </div>
