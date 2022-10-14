@@ -1,5 +1,5 @@
 import {Component} from 'react';
-// import { Navigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 
 import {signUp} from '../../utilities/users-service';
@@ -38,6 +38,7 @@ export default class SignUpForm extends Component {
     handleChange = (evt) => {
         this.setState({
             [evt.target.name]: evt.target.value,
+            
             error: ''
         });
     };
@@ -46,11 +47,15 @@ export default class SignUpForm extends Component {
         const disable = this.state.password !== this.state.confirm;
         return (
             
+
+
+                //change navigation point to new user page where nav bar is not visible and turns off forward backward refresh
+
             <div>
-                <div className="form-container">
-                {/* {user &&
-                <Navigate to = "EmployeeInit" replace = {true}/>  
-                } */}
+                <div className="form-container">     
+                {
+                <Navigate to = "createEmployee" replace = {true} onChange={this.handleChange}/>  
+                }
                     
                     <form autoComplete="off" onSubmit={(evt)=> this.handleSubmit(evt)}>
                         <label className = "loginLabels">Name</label>
