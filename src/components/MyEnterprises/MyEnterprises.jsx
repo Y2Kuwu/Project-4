@@ -22,9 +22,9 @@ export default function MyEnterprises(props) {
   }
   async function companyDetails(id){
     const detailComp = await companyAPI.detailCompany(id);
-    // return(companies[index].values)
-    // console.log(this.company._id) 
-    // console.log(companies.state)
+    //return(companies[index].values)
+    //console.log(this.company._id) 
+    //console.log(companies.state)
     console.log(companies.id);
    //console.log(companies.push)employees
   }
@@ -32,15 +32,15 @@ export default function MyEnterprises(props) {
 
 
   return (
-    <>
+    <div className='companyWrapWrap'>
 
       <h1 className='allEnterprises'>Companies</h1>
       {companies.map((company, index) => 
-        <div>
-          <ul>{company.name} <button className='details' onClick={(handleChange) => {companyDetails(company._id)}}>Details</button> <button className='delete' onClick={(handleChange) => {deleteCompanies(company.id)}}>Delete</button> </ul>
-          <ul></ul>
+        <div className='companyWrap'>
+          <ul className='companyName'>{company.name} </ul>
+          <ul> <button className='details' onClick={(handleChange) => {companyDetails(company._id)}}>Details</button> <button className='delete' onClick={(handleChange) => {deleteCompanies(company._id)}}>Delete</button> </ul>
         </div>)}
-    </>);
+    </div>);
 }
 
 

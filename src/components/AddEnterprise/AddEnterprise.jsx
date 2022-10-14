@@ -39,23 +39,22 @@ handleSubmit = async (evt) => {
 
 render(){
   return (
-    <div>
+    <div className = "createEnt">
     <h1 className = "newEnterprise">New Enterprise</h1>
     <form autoComplete="off" onSubmit={this.handleSubmit}>
-    <label>Name</label>
-    <input type="text" name="name" value={this.props.name} onChange={this.handleChange} required />
-    <label>Stock ID</label>  
-    <input type="text" name="stockSymbol" value={this.state.stockSymbol} onChange={this.handleChange} required />
-    <label>CEO</label>  
-    <input type="text" name="ceo" value={this.state.ceo} onChange={this.handleChange} required />
-    <label>Region(s)</label>  
-    <input type = "text" name="regions" value={this.state.regions} onChange={this.handleChange} required />
-    <label>Number of offices</label>  
-    <input type="text" name="officeCount" value={this.state.officeCount} onChange={this.handleChange} required />
-            <button type="submit" id = "sub">Create</button>
-          
+   
+    <label className='entLabels'>Name</label>
+    <input type="text" name="name" className='entFields' value={this.props.name} onChange={this.handleChange} required />
+    <label className='entLabels'>Stock ID</label>  
+    <input type="text" name="stockSymbol" className='entFields' value={this.state.stockSymbol} onChange={this.handleChange} required />
+    <label className='entLabels'>CEO</label>  
+    <input type="text" name="ceo" className='entFields' value={this.state.ceo} onChange={this.handleChange} required />
+    <label className='entLabels'>Region(s)</label>  
+    <input type = "text" name="regions" className='entFields' value={this.state.regions} onChange={this.handleChange} required />
+    <label className='entLabels'>Number of offices</label>  
+    <input type="text" name="officeCount" className='entFields' value={this.state.officeCount} onChange={this.handleChange} required />
   
-            
+            <button type="submit" id = "sub">Create</button>  
     </form>
     <p className='infoNote'>Additional information will be required after initial creation</p>
     </div>

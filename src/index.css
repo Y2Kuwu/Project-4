@@ -231,3 +231,60 @@ nav{
   outline-color: skyblue;
   cursor:help;
 }
+.createEnt{
+  background-color: rgb(118, 100, 100);
+  outline-offset: 6px;
+  outline-width: 4px;
+  outline-style: solid;
+  outline-color: #000;
+}
+#sub{
+  font-family: 'Courier New', Courier, monospace;
+  color: black;
+  margin-inline: 25.5%;
+  outline-offset: -6px;
+  outline-style: groove;
+  outline-width: 2px;
+  border-radius: 10px;
+}
+.entFields{
+  font-family: 'Courier New', Courier, monospace;
+  outline-style: solid;
+  /* outline-offset: 4px;
+  outline-color: black; */
+  background-color: white;
+  margin-right: 34.2%;
+}
+.entLabels{
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+  margin-left: 2%; 
+  /* background-color: #615954;
+  outline-style:groove;
+  outline-offset: 2px;
+  margin-right: 5%; */
+}
+.companyWrapWrap{
+  background-color: #615954;
+  outline-offset: 4px;
+  outline-color: black;
+  outline-style: solid;
+  
+}
+.companyWrap{
+  background-color: #968c84;
+  border-radius: 4px;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: -px;
+}
+.delete{
+  color: red;
+}
+.details{
+  color:green;
+}
+.companyName{
+  /* background-color:; */
+  align-items: center;
+}
