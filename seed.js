@@ -395,3 +395,5 @@ const countries = await Company.create([
 'Yemen',
 'Zambia',
 'Zimbabwe']);
+
+console.log(country)

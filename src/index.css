@@ -211,11 +211,16 @@ nav{
   font-size: large;
   text-decoration: none;
   color: black;
-  text-shadow: 1px 1px 1px black;
-
+ 
 }
 .userName:hover{
-  color: rgb(46, 77, 131);
+  text-shadow: 1px 1px 1px white;
+  background-color: gray;
+  border-radius: 4px;
+  outline-offset: -1px;
+  outline-style: solid;
+  outline-width: 2px;
+  outline-color: whitesmoke;
 }
 
 .welcome{

@@ -1,8 +1,9 @@
 import { useParams } from "react-router-dom";
-import AddEnterprise from '../../components/AddEnterprise/AddEnterprise';
-import MyEnterprises from "../../components/MyEnterprises/MyEnterprises";
+import AddEnterprise from '../AddEnterprise/AddEnterprise';
+import MyEnterprises from "../MyEnterprises/MyEnterprises";
+import { detailCompany } from "../../utilities/company-api";
 
-export default function EnterpriseDetails({props}){
+export default function EnterpriseDetails(props){
   let {id} = useParams();
 
   let ep = eps.find((ent) => ent._id === id);

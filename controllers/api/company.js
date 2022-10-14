@@ -35,7 +35,7 @@ async function deleteCompany (req, res){
 
 async function detailCompany (req, res){
     try{
-        const company = await Company.findById(req.params._id);
+        const company = await Company.findById({'company._id': req.params._id});
         console.log(req.body);
         res.json(company)
     }
@@ -69,6 +69,7 @@ async function createEmployee (req,res){
             console.log("Failed to create new employee")
         }
     }
+
 
     module.exports = {
         createCompany,

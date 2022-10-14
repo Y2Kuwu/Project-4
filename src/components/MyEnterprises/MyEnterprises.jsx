@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { redirect } from 'react-router-dom';
 import * as companyAPI from "../../utilities/company-api";
 import CreateCompany from '../AddEnterprise/AddEnterprise';
+import { Link } from 'react-router-dom';
 
 export default function MyEnterprises(props) {
     const [companies, setCompanies] = useState([]);
@@ -33,7 +34,7 @@ export default function MyEnterprises(props) {
       <h1 className='enterprises'>Companies</h1>
       {companies.map((company, index) => 
         <div className='companyWrap'>
-          <p className='companyName'>{company.name}</p>
+          <Link to = {`./EnterpriseDetails/${company._id}`} className='companyName'>{company.name}</Link>
           <p> <button className='details' onClick={(handleChange) => {companyDetails(company._id)}}>Details</button> <button className='delete' onClick={(handleChange) => {deleteCompanies(company._id)}}>Delete</button> </p>
         </div>)}
     </div>);
