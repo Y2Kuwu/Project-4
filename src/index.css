@@ -184,8 +184,8 @@ nav{
 .allEnterprises:hover{
   color: rgb(46, 77, 131);
 }
-.Enterprises{
-  align-items: center;
+.enterprises{
+  text-align: center;
   font-family: 'Courier New', Courier, monospace;
   text-shadow: 2px 2px 2px white;
 }
@@ -301,34 +301,48 @@ nav{
   outline-style: solid;
   margin-top: 20px;
   padding: 1px;
-  
-  
+
 }
 .companyWrap{
-  
   background-color: #968c84;
   border-radius: 4px;
-  margin-left: 20%;
-  margin-right: 20%;
-  
+  margin-left: 40%;
+  margin-right: 40%;
+
+  justify-content:space-evenly;
+  outline-color: black;
+  outline-style: solid;
+  outline-width: 2px;
+ 
+
 }
 .delete{
   font-family: 'Courier New', Courier, monospace;
-  color: maroon;
+  color:rgb(118, 100, 100);
   outline-width: 1px;
   outline-color: #000;
   outline-style: solid;
+  
+}
+.delete:hover{
+  color: maroon;
+  outline-color: maroon;
 }
 .details{
   font-family: 'Courier New', Courier, monospace;
-  color:olive;
+  color:rgb(118, 100, 100);
   outline-width: 1px;
   outline-color: #000;
   outline-style: solid;
 }
+.details:hover{
+  color:rgb(118, 120, 100);;
+  outline-color: green;
+}
 .companyName{
-  /* background-color:; */
-  align-items: center;
+  text-align: right;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
 }
 .createEmp{
   background-color: rgb(118, 100, 100);

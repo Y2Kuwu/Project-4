@@ -8,7 +8,7 @@ export default class CreateEmployee extends Component {
     title: '',
     duties: '',
     dob: '',
-    credentials: '',
+    credentials: ''
   };
 
 
@@ -50,9 +50,9 @@ render(){
     <label className = "empLabels">Title</label>  
     <input type="text" name="title" className = "empFields" value={this.state.title} onChange={this.handleChange} required />
     <label className = "empLabels">Duties</label>  
-    <input type = "text" name="duties" className = "empFields" value={this.state.duties} onChange={this.handleChange} required />
+    <input type = "array" name="duties" className = "empFields" value={this.state.duties} onChange={this.handleChange} required />
     <label className = "empLabels">DOB</label>  
-    <input type="text" name="dob" className = "empFields" value={this.state.dob} onChange={this.handleChange} required />
+    <input type="date" name="dob" className = "empFields" value={this.state.dob} onChange={this.handleChange} required />
     <label className = "empLabels">Credential list</label>  
     <input type="text" name="credentials" className = "empFields" value={this.state.credentials} onChange={this.handleChange} required />
             <button type="submit" id= "sub">Create</button>   

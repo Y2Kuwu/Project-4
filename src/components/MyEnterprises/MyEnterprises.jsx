@@ -28,13 +28,13 @@ export default function MyEnterprises(props) {
   }
   
   return (
+    
     <div className='companyWrapWrap'>
-
-      <h1 className='Enterprises'>Companies</h1>
+      <h1 className='enterprises'>Companies</h1>
       {companies.map((company, index) => 
         <div className='companyWrap'>
-          <ul className='companyName'>{company.name} </ul>
-          <ul> <button className='details' onClick={(handleChange) => {companyDetails(company._id)}}>Details</button> <button className='delete' onClick={(handleChange) => {deleteCompanies(company._id)}}>Delete</button> </ul>
+          <p className='companyName'>{company.name}</p>
+          <p> <button className='details' onClick={(handleChange) => {companyDetails(company._id)}}>Details</button> <button className='delete' onClick={(handleChange) => {deleteCompanies(company._id)}}>Delete</button> </p>
         </div>)}
     </div>);
 }

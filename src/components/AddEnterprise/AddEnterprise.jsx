@@ -50,7 +50,7 @@ render(){
     <label className='entLabels'>CEO</label>  
     <input type="text" name="ceo" className='entFields' value={this.state.ceo} onChange={this.handleChange} required />
     <label className='entLabels'>Region(s)</label>  
-    <input type = "text" name="regions" className='entFields' value={this.state.regions} onChange={this.handleChange} required />
+    <input type ="text" name="regions" className='entFields' value={this.state.regions} onChange={this.handleChange} required />
     <label className='entLabels'>Number of offices</label>  
     <input type="text" name="officeCount" className='entFields' value={this.state.officeCount} onChange={this.handleChange} required />
   
