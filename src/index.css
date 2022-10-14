@@ -171,7 +171,7 @@ nav{
   outline-style: solid;
   outline-width: 2px;
   outline-color: whitesmoke;
-  background-color: skyblue;
+  background-color: rgb(118, 100, 100);
 }
 
 
@@ -183,6 +183,9 @@ nav{
 .allEnterprises:hover{
   color: rgb(46, 77, 131);
 }
+.Enterprises{
+  font-family: 'Courier New', Courier, monospace;
+}
 
 .newEnterprise{
   font-family: 'Courier New', Courier, monospace;
@@ -191,6 +194,9 @@ nav{
 }
 .newEnterprise:hover{
   color: rgb(46, 77, 131);
+}
+.Enterprise{
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .userName{
@@ -209,9 +215,7 @@ nav{
   text-decoration: none;
   color: black;
 }
-.welcome:hover{
-  color: rgb(46, 77, 131);
-}
+
 
 .logOut{
   font-family: 'Courier New', Courier, monospace;
@@ -279,10 +283,16 @@ nav{
   margin-top: -px;
 }
 .delete{
-  color: red;
+  color: maroon;
+  outline-width: 1px;
+  outline-color: #000;
+  outline-style: solid;
 }
 .details{
-  color:green;
+  color:olive;
+  outline-width: 1px;
+  outline-color: #000;
+  outline-style: solid;
 }
 .companyName{
   /* background-color:; */

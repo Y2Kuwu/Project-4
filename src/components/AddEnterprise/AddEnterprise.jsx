@@ -40,7 +40,7 @@ handleSubmit = async (evt) => {
 render(){
   return (
     <div className = "createEnt">
-    <h1 className = "newEnterprise">New Enterprise</h1>
+    <h1 className = "Enterprise">New Enterprise</h1>
     <form autoComplete="off" onSubmit={this.handleSubmit}>
    
     <label className='entLabels'>Name</label>

@@ -34,7 +34,7 @@ export default function MyEnterprises(props) {
   return (
     <div className='companyWrapWrap'>
 
-      <h1 className='allEnterprises'>Companies</h1>
+      <h1 className='Enterprises'>Companies</h1>
       {companies.map((company, index) => 
         <div className='companyWrap'>
           <ul className='companyName'>{company.name} </ul>
