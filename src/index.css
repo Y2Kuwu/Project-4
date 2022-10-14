@@ -188,6 +188,7 @@ nav{
   text-align: center;
   font-family: 'Courier New', Courier, monospace;
   text-shadow: 2px 2px 2px white;
+  margin-top: -2px;
 }
 
 .newEnterprise{
