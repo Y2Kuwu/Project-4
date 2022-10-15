@@ -7,6 +7,20 @@ async function getCompany(req,res){
     res.json(company);
 }
 
+
+async function getOneCompany (req, res){
+    try{
+        req.body.user = req.user._id;
+        const company = await Company.findById(req.params.id);
+        console.log(req.body);
+        res.json(company)
+    }
+    catch(error){
+        res.status(400).json(error);
+        console.log("Cannot find company details")
+    }
+}
+
 async function createCompany (req, res){
     try{
     req.body.user = req.user._id;  //ensures the user is legit matches by user._id
@@ -33,22 +47,11 @@ async function deleteCompany (req, res){
     }
 }
 
-async function detailCompany (req, res){
-    try{
-        //'company._id': 
-        const company = await Company.findById(req.params.id);
-        console.log(req.body);
-        res.json(company)
-    }
-    catch(error){
-        res.status(400).json(error);
-        console.log("Cannot find company details")
-    }
-}
+
 
 async function updateCompany (req, res){
     try{
-        const company = await Company.findByIdAndUpdate(req.params.id);
+        const company = await Company.findByIdAndUpdate(req.params.id, req.body);
         console.log(req.params.id);
         res.json(company.id)
     }
@@ -78,5 +81,6 @@ async function createEmployee (req,res){
         // getEmployee,
         getCompany,
         deleteCompany,
-        detailCompany,
+        getOneCompany,
+        updateCompany,
     }

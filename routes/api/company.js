@@ -10,6 +10,7 @@ router.post('/', CompanyCtrl.createCompany);
 // router.post('/createEmployee', CompanyCtrl.createEmployee);
 router.delete('/:id', CompanyCtrl.deleteCompany);
 router.post('/', CompanyCtrl.createEmployee);
-router.get('/:id', CompanyCtrl.detailCompany);
+router.get('/:id', CompanyCtrl.getOneCompany);
+router.put('/:id', CompanyCtrl.updateCompany);
 
 module.exports = router;

@@ -42,7 +42,6 @@ render(){
     <div className = "createEnt">
     <h1 className = "Enterprise">New Enterprise</h1>
     <form autoComplete="off" onSubmit={this.handleSubmit}>
-   
     <label className='entLabels'>Name</label>
     <input type="text" name="name" className='entFields' value={this.props.name} onChange={this.handleChange} required />
     <label className='entLabels'>Stock ID</label>  

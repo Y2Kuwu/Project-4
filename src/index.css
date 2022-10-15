@@ -345,6 +345,18 @@ nav{
   color:rgb(118, 120, 100);;
   outline-color: green;
 }
+.update{
+  font-family: 'Courier New', Courier, monospace;
+  color:rgb(118, 100, 100);
+  outline-width: 1px;
+  outline-color: #000;
+  outline-style: solid;
+}
+.update:hover{
+  color:rgb(118, 120, 100);;
+  outline-color: green;
+}
+
 .companyName{
   text-align: right;
   font-family: 'Courier New', Courier, monospace;

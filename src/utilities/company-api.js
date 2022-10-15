@@ -18,7 +18,7 @@ export function getCompany() {
     return sendRequest(BASE_URL);
   }
 
-export function detailCompany(id) {
+export function getOneCompany(id) {
   return sendRequest(`${BASE_URL}/${id}`)
 }
 // export function getEmployee(companyId) {
@@ -31,4 +31,8 @@ export function detailCompany(id) {
 
 export function deleteCompany(id) {
   return sendRequest(`${BASE_URL}/${id}`, 'DELETE');
+}
+
+export function updateCompany(company, id) {
+  return sendRequest(`${BASE_URL}/${id}`, 'PUT', company);
 }

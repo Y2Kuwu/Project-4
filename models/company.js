@@ -26,10 +26,8 @@ const companySchema = new Schema({
     //connected to user
     user: { type: Schema.Types.ObjectId, ref: 'User', required: true },
     name: {type : String},
-    stockSymbol: {type : String},
-    ceo: {
-        ceoName: {type: String, isSuper: true},
-    },
+    stockSymbol: {type : String ,maxLength: 4},
+    ceo: {type: String, isSuper: true},
     regions: {type: Array},
     officeCount: {type: Number}
     // employeeCount: {type: Number},
