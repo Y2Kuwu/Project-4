@@ -4,13 +4,10 @@ import {Routes, Route} from 'react-router-dom';
 //pages
 import AuthPage from '../AuthPage/AuthPage';
 
-import MyEnterprise from '../../components/MyEnterprises/MyEnterprises';
-
-
 // Import the following components
 import NavBar from '../../components/NavBar/NavBar';
-// import AddEnterprise from '../AddEnterprise/AddEnterprise';
-import { AddEnterprise } from '../../components/AddEnterprise/AddEnterprise';
+import MyEnterprise from '../../components/MyEnterprises/MyEnterprises';
+import AddEnterprise   from '../../components/AddEnterprise/AddEnterprise';
 import { CreateEmployee } from '../../components/CreateEmployee/CreateEmployee';
 import {getUser} from '../../utilities/users-service';
 
@@ -39,9 +36,7 @@ function App() {
                         <Route path="/CreateEmployee" element={<CreateEmployee user={user} setUser={setUser}/>}/>
                     </Routes>
                     
-                    {/* <CompanyList company={company} setCompany={setCompany}/>
-                    <EmployeeList employee={employee} setEmployee={setEmployee}/>
-                    <RecordList record={record} setRecord={setRecord}/> */}
+                  
                 </>
                 
                 :
@@ -52,3 +47,8 @@ function App() {
 }
 
 export default App;
+
+
+  {/* <CompanyList company={company} setCompany={setCompany}/>
+                    <EmployeeList employee={employee} setEmployee={setEmployee}/>
+                    <RecordList record={record} setRecord={setRecord}/> */}

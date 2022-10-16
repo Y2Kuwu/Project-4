@@ -25,7 +25,7 @@ const employeeSchema = new Schema({
 const companySchema = new Schema({
     //connected to user
     user: { type: Schema.Types.ObjectId, ref: 'User', required: true },
-    name: {type : String},
+    comapnyName: {type : String},
     stockSymbol: {type : String ,maxLength: 4},
     ceo: {type: String, isSuper: true},
     regions: {type: Array},

@@ -1,64 +1,38 @@
 import './AddEnterprise.css'
 import { Component } from 'react';
-import { createCompany} from '../../utilities/company-api';
-// import {MyEnterprise} from '/components/MyEnterprises/MyEnterprises';
+import { render } from 'react-dom';
+// import App from '../../pages/App/App';
+import Add from '../MyEnterprises/MyEnterprises';
+import App from '../../pages/App/App';
 
-export class AddEnterprise extends Component {
-  constructor(props){
-    super(props);
+class AddEnterprise extends Component {
+  constructor() {
+    super();
     this.state = {
-    name: '',
-    stockSymbol: '',
-    ceo: '',
-    regions: '',
-    officeCount: '',
-
-
-    }
-   
+      details: [{
+        name: '',
+        stockSymbol: '',
+        ceo: '',
+        regions: '',
+        officeCount: '',
+      }]
+    };
   }
 
-handleChange = (evt) => {
-  this.setState({[evt.target.name]: evt.target.value});
-};
-
-handleSubmit = async (evt) => {
-  
-  alert('Successfully created: ' + this.state.name + '!')
-  evt.preventDefault();
-  try {
-    const {name, stockSymbol, ceo, regions, officeCount} = this.state;
-    const company = await createCompany(this.state);
-    this.props.setCompany(company);
-    this.props.history.push('/');
-   
-  } catch {
-    this.setState({ error: 'Company creation failed' });
-  }
-};
-
-
-render(){
-  return (
-    <div>
-    <h1 className = "Enterprise">New Enterprise</h1>
-    <div className = "createEnt">
-    <form autoComplete="off" onSubmit={this.handleSubmit}>
-    <label className='entLabels'>Name</label>
-    <input type="text" name="name" className='entFields' value={this.state.name} onChange={this.handleChange} required />
-    <label className='entLabels'>Stock ID</label>  
-    <input type="text" name="stockSymbol" className='entFields' value={this.state.stockSymbol} onChange={this.handleChange} required />
-    <label className='entLabels'>CEO</label>  
-    <input type="text" name="ceo" className='entFields' value={this.state.ceo} onChange={this.handleChange} required />
-    <label className='entLabels'>Region(s)</label>  
-    <input type ="text" name="regions" className='entFields' value={this.state.regions} onChange={this.handleChange} required />
-    <label className='entLabels'>Number of offices</label>  
-    <input type="text" name="officeCount" className='entFields' value={this.state.officeCount} onChange={this.handleChange} required />
-    <button type="submit" id = "sub">Create</button>  
-    </form>
-    <p className='infoNote'>Additional information will be required after initial creation</p>
-    </div>
-    </div>
+  render() {
+    return (
+      <div>
+        {this.state.detail.map(detail => <Add key={detail.name} detail={detail} data={this.props.location.data}/>)}
+      </div>
     );
   }
 }
+
+export default AddEnterprise;
+
+// render(<MyEnterprises location={{ data: '' }} />, document.getElementById('root'));
+  // name: this.props.detail.name,
+        // stockSymbol: this.props.detail.name,
+        // ceo: this.props.detail.name,
+        // regions: this.props.detail.name,
+        // officeCount: this.props.detail.name,

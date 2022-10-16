@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import * as companyAPI from "../../utilities/company-api";
 import { Component } from 'react';
 // import { AddEnterprise } from '../AddEnterprise/addEnterprise';
-import { render } from '@testing-library/react';
 import { Link } from 'react-router-dom';
 
     export default function MyEnterprise() {
@@ -36,7 +35,7 @@ return(
       <div className='companyWrapWrap'>
       {companies.map(company => 
         <div className='companyWrap'>
-          <p>{company.name}</p>
+          <p>{company.companyName}</p>
             {!hidden ? 
             <div>
               <p>{company.stockSymbol}</p>
