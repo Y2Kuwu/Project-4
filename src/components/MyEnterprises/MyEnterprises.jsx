@@ -1,21 +1,22 @@
 import { useState, useEffect } from 'react';
 import * as companyAPI from "../../utilities/company-api";
+import { Component } from 'react';
+// import { AddEnterprise } from '../AddEnterprise/addEnterprise';
+import { render } from '@testing-library/react';
+import { Link } from 'react-router-dom';
 
-export default function MyEnterprises() {
+    export default function MyEnterprise() {
+  
     const [companies, setCompanies] = useState([]);
     const [hidden, setHidden] = useState(true);
-
-    const [name, setName] = useState('');
-    const [stockSymbol, setStock] = useState('');
-    const [ceo, setCEO] = useState('');
-    const [regions,setRegion]=useState('')
-    const [officeCount,setOffices]=useState('')
-
-  useEffect(() =>{
+   
+  
+   useEffect(() =>{
     async function getCompanies() {
       const companies = await companyAPI.getCompany();
       setCompanies(companies);
     }
+    
     getCompanies();
   }, [])
 
@@ -24,13 +25,8 @@ export default function MyEnterprises() {
     window.location.reload()
   }
 
-  async function handleUpdateCompanies(id) {
 
-    const updateComp = await companyAPI.updateCompany(id);
-    // const updateComp =  companies.filter(company => company._id === id)
-  }
-
-  return (
+return(
  <main>
     
       <div className='banner'>
@@ -48,21 +44,15 @@ export default function MyEnterprises() {
               <p>{company.regions}</p>
               <p>{company.officeCount}</p>
             </div>:null}
-          
+            <Link to={"UpdateCompany/" + company._id} className="update">Update</Link>
           <button className='delete' onClick={() => {handleDeleteCompanies(company._id)}}>Delete</button>
-          <div>
-        <input type="text" value={name} onChange={(e)=>{setName(e.target.value)}} /> <br /><br />
-        <input type="text" value={stockSymbol} onChange={(e)=>{setStock(e.target.value)}} /> <br /><br />
-        <input type="text" value={ceo}  onChange={(e)=>{setCEO(e.target.value)}} /> <br /><br />
-        <input type="text" value={regions}  onChange={(e)=>{setRegion(e.target.value)}} /> <br /><br />
-        <input type="text" value={officeCount}  onChange={(e)=>{setOffices(e.target.value)}} /> <br /><br />
-        <button onClick={handleUpdateCompanies} >Update company</button>  
-      </div>
-
-        
+        <div>
+        </div>
         </div>)}
-     
     </div>
     </main>
   );
 }
+  
+
+ 

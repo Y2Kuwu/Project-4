@@ -4,7 +4,7 @@ import {Routes, Route} from 'react-router-dom';
 //pages
 import AuthPage from '../AuthPage/AuthPage';
 
-import MyEnterprise from '../../pages/MyEnterprises/MyEnterprises';
+import MyEnterprise from '../../components/MyEnterprises/MyEnterprises';
 
 
 // Import the following components
