@@ -21,7 +21,18 @@ function App() {
     // const [company, setCompany] = useState(getCompany());
     // const [employee, setEmployee] = useState(getEmployee());
     // const [record, setRecord] = useState(getRecord());
+    const [companies, setCompanies] = useState([
+    {name: ''},
+    {stockSymbol: ''},
+    {ceo: ''},
+    {regions: ''},
+    {officeCount: ''},
+    ])
 
+    function addCompany(newCompany){
+        console.log(newCompany)
+        setCompanies([...companies, newCompany])
+    }
 
     return (
       
@@ -33,9 +44,9 @@ function App() {
                    
                     <Routes>
                 
-                        <Route path="/AddEnterprise" element={<AddEnterprise user={user} setUser={setUser}/>}/>
+                        <Route path="/AddEnterprise" element={<AddEnterprise addCompany={addCompany} user={user} setUser={setUser}/>}/>
                         <Route path="/MyEnterprise" element={<MyEnterprise user={user} setUser={setUser}/>}/>
-                        <Route path="/CreateEmployee" element={<CreateEmployee user={user} setUser={setUser}/>}/>
+                        <Route path="/CreateEmployee" element={<CreateEmployee  user={user} setUser={setUser}/>}/>
                     </Routes>
                     
                     {/* <CompanyList company={company} setCompany={setCompany}/>

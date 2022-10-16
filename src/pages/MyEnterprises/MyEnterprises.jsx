@@ -21,13 +21,13 @@ export default function MyEnterprises() {
     const deleteComp = await companyAPI.deleteCompany(id);
     window.location.reload()
   }
-  useEffect(()=>{
-  async function getOne(id){
-    const companies = await companyAPI.getOneCompany(id);
-    setCompanies(companies.id);
-  }
-  getOne();
-}, [])
+//   useEffect(()=>{
+//   async function getOne(id){
+//     const companies = await companyAPI.getOneCompany(id);
+//     setCompanies(companies.id);
+//   }
+//   getOne();
+// }, [])
 
   function updateCompanies(id) {
     companyAPI.updateCompany(id);
@@ -36,16 +36,18 @@ export default function MyEnterprises() {
   }
 
   return (
+   
  <main>
     {comp &&<updateCompanies id={comp[0]._id}{...comp[0]}/>}
     <div className='companyWrapWrap'>
+     
       <h1 className='enterprises'>Companies</h1>
       <button className = "details" onClick={() => setHidden( y=> !y)}> Show all details </button>
       {companies.map((company, index) => 
         <div className='companyWrap'>
-          <p>{company.name}</p>
+          <p className='compName'>{company.name}</p>
             {!hidden ? 
-            <div>
+            <div className='detailBody'>
               <p>{company.stockSymbol}</p>
               <p>{company.ceo}</p>
               <p>{company.regions}</p>
@@ -54,37 +56,8 @@ export default function MyEnterprises() {
            <button className = "update" onClick={() => updateCompanies(company._id)}>Update</button>
           <button className='delete' onClick={(handleChange) => {deleteCompanies(company._id)}}>Delete</button>
         </div>)}
-     
+       
     </div>
     </main>
   );
 }
-
-
-  // async function companyDetails(id){
-  //   const detailComp = await companyAPI.detailCompany(id);
-
-  //   // console.log(companies.id);
-  // }
-
-
-  // const detailClick = () => companyDetails(true);
-
-
-
-
-{/* <button className='details' onClick={(handleChange) => {companyDetails(company._id)}}>Details</button>  */}
-
-
-{/* <div>
-    <button className='details' onClick={detailClick}>Details</button> 
-    {setDetails ? <res/> :null}
-    </div>
-    )
-    }
-const res = () => (
-<div id = "details">
-  
-</div>
-)
-ReactDOM.render(<detailClick />, document.querySelector("#container")) */}

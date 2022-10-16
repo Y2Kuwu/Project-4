@@ -393,4 +393,20 @@ nav{
   text-shadow: 2px 2px 2px gray;
   margin-right: 34.2%;
 }
+.compName{
+  font-family: 'Courier New', Courier, monospace;
+  background-color: whitesmoke;
+  outline-width: 2px;
+  outline-color: black;
+  outline-style: solid;
+  border-radius: 4px;
+}
+.detailBody{
+  font-family: 'Courier New', Courier, monospace;
+  background-color: rgb(108, 104, 120);
+  outline-width: 2px;
+  outline-color: black;
+  outline-style: solid;
+
+}
 
