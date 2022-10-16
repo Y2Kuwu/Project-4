@@ -9,7 +9,8 @@ import MyEnterprise from '../../pages/MyEnterprises/MyEnterprises';
 
 // Import the following components
 import NavBar from '../../components/NavBar/NavBar';
-import AddEnterprise from '../AddEnterprise/AddEnterprise';
+// import AddEnterprise from '../AddEnterprise/AddEnterprise';
+import { AddEnterprise } from '../../components/AddEnterprise/AddEnterprise';
 import CreateEmployee from '../../components/CreateEmployee/CreateEmployee';
 import {getUser} from '../../utilities/users-service';
 

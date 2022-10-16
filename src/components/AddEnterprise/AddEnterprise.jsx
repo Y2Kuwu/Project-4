@@ -1,32 +1,34 @@
 import './AddEnterprise.css'
 import { Component } from 'react';
 import { createCompany} from '../../utilities/company-api';
-// import { Route } from 'react-router-dom';
-// import { redirect } from 'react-router-dom';
 
-export default class CreateCompany extends Component {
-  state = {
-    name: '',
-    stockSymbol: '',
-    ceo: '',
-    regions: '',
-    officeCount: '',
-  };
+
+export class AddEnterprise extends Component {
+  constructor(props){
+    super(props);
+    this.state = {value: ''};
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  // state = {
+  //   name: '',
+  //   stockSymbol: '',
+  //   ceo: '',
+  //   regions: '',
+  //   officeCount: '',
+  // };
 
 
 
 handleChange = (evt) => {
-  this.setState({
-    [evt.target.name]: evt.target.value,
-    
-    error: ''
-  });
+  this.setState({[evt.target.name]: evt.target.value});
 };
 
 handleSubmit = async (evt) => {
+  
+  alert('Enterprise: ' + this.state.name)
   evt.preventDefault();
   try {
-   
     const compForm = { ...this.state };
     const company = await createCompany(compForm);
     this.props.setCompany(company);
@@ -39,8 +41,10 @@ handleSubmit = async (evt) => {
 
 render(){
   return (
-    <div className = "createEnt">
+    <main>
     <h1 className = "Enterprise">New Enterprise</h1>
+    <div className = "createEnt">
+     
     <form autoComplete="off" onSubmit={this.handleSubmit}>
     <label className='entLabels'>Name</label>
     <input type="text" name="name" className='entFields' value={this.props.name} onChange={this.handleChange} required />
@@ -57,7 +61,5 @@ render(){
     </form>
     <p className='infoNote'>Additional information will be required after initial creation</p>
     </div>
-    
-    );
-  }
+    </main>)}
 }

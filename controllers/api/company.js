@@ -52,7 +52,8 @@ async function deleteCompany (req, res){
 async function updateCompany (req, res){
     try{
         const company = await Company.findByIdAndUpdate(req.params.id, req.body);
-        console.log(req.params.id);
+        console.log(req.body);
+        console.log(req.params._id);
         res.json(company.id)
     }
     catch(error){

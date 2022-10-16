@@ -184,12 +184,7 @@ nav{
 .allEnterprises:hover{
   color: rgb(46, 77, 131);
 }
-.enterprises{
-  text-align: center;
-  font-family: 'Courier New', Courier, monospace;
-  text-shadow: 2px 2px 2px white;
-  margin-top: -2px;
-}
+
 
 .newEnterprise{
   font-family: 'Courier New', Courier, monospace;
@@ -319,8 +314,6 @@ nav{
   outline-color: black;
   outline-style: solid;
   outline-width: 2px;
- 
-
 }
 .delete{
   font-family: 'Courier New', Courier, monospace;
@@ -334,17 +327,7 @@ nav{
   color: maroon;
   outline-color: maroon;
 }
-.details{
-  font-family: 'Courier New', Courier, monospace;
-  color:rgb(118, 100, 100);
-  outline-width: 1px;
-  outline-color: #000;
-  outline-style: solid;
-}
-.details:hover{
-  color:rgb(118, 120, 100);;
-  outline-color: green;
-}
+
 .update{
   font-family: 'Courier New', Courier, monospace;
   color:rgb(118, 100, 100);
@@ -394,3 +377,30 @@ nav{
   margin-right: 34.2%;
 }
 
+.details{
+  font-family: 'Courier New', Courier, monospace;
+  color:rgb(118, 100, 100);
+  outline-width: 1px;
+  outline-color: #000;
+  outline-style: solid;
+  margin-right: 1210px;
+  margin-left: 140px;
+  margin-top: -60px;
+}
+.details:hover{
+  color:rgb(118, 120, 100);;
+  outline-color: green;
+}
+
+.enterprises{
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  text-shadow: 2px 2px 2px white;
+  margin-top: 20px;
+}
+
+.banner{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
