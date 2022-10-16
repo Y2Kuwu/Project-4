@@ -41,10 +41,10 @@ handleSubmit = async (evt) => {
 
 render(){
   return (
-    <main>
+    <div>
     <h1 className = "Enterprise">New Enterprise</h1>
     <div className = "createEnt">
-     
+      
     <form autoComplete="off" onSubmit={this.handleSubmit}>
     <label className='entLabels'>Name</label>
     <input type="text" name="name" className='entFields' value={this.props.name} onChange={this.handleChange} required />
@@ -61,5 +61,7 @@ render(){
     </form>
     <p className='infoNote'>Additional information will be required after initial creation</p>
     </div>
-    </main>)}
+    </div>
+    );
+  }
 }
