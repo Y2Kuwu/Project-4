@@ -276,6 +276,7 @@ nav{
   outline-offset: -10px;
 }
 .entFields{
+  margin-top: 10px;
   font-family: 'Courier New', Courier, monospace;
   outline-style: solid;
   /* outline-offset: 4px;
@@ -285,6 +286,7 @@ nav{
   margin-right: 34.2%;
 }
 .entLabels{
+  margin-top: 10px;
   font-family: 'Courier New', Courier, monospace;
   color: black;
   margin-left: 2%; 
@@ -346,6 +348,7 @@ nav{
   text-align: center;
 }
 .createEmp{
+
   background-color: rgb(118, 100, 100);
   outline-offset: 6px;
   outline-width: 4px;
@@ -358,6 +361,7 @@ nav{
   text-shadow: 2px 2px 2px white;
 }
 .empLabels{
+    margin-top: 10px;
     font-family: 'Courier New', Courier, monospace;
     color: black;
     margin-left: 2%; 
@@ -368,6 +372,7 @@ nav{
     margin-right: 5%; */
 }
 .empFields{
+  margin-top: 10px;
   font-family: 'Courier New', Courier, monospace;
   outline-style: solid;
   /* outline-offset: 4px;

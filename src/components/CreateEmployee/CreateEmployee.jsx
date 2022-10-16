@@ -1,15 +1,13 @@
 import { Component } from 'react';
 import { createEmployee} from '../../utilities/company-api';
 
-export default class CreateEmployee extends Component {
-  state = {
-    firstName: '',
-    lastName: '',
-    title: '',
-    duties: '',
-    dob: '',
-    credentials: ''
-  };
+export class CreateEmployee extends Component {
+  constructor(props){
+    super(props);
+    this.state = {value: ''};
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
 
 
@@ -39,9 +37,9 @@ handleSubmit = async (evt) => {
 render(){
   return (
     <div>
-   
-    <div className='createEmp'>
     <h1 className = "newEmployee">Onboard Employee</h1>
+    <div className='createEmp'>
+    
     <form autoComplete="off" onSubmit={this.handleSubmit}>
     <label className = "empLabels">First name</label>
     <input type="text" name="firstName" className = "empFields" value={this.state.firstName} onChange={this.handleChange} required />
