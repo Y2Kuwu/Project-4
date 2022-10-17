@@ -37,3 +37,24 @@
     transform: rotate(360deg);
   }
 }
+
+.App {
+  text-align: center;
+  }
+  .clock {
+  background-color: #282c34;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  }
+
+  .Time {
+      position: absolute;
+      padding-top: 45px;
+      margin-left: 10px;
+      font-family: courier, monospace;
+      color: black;
+      opacity: .8;
+      font-size: 20px;
+      text-shadow: 1px 1px 1px white;
+      }

@@ -4,8 +4,8 @@
   --tan-1: #FBF9F6;
   --tan-2: #E7E2DD;
   --tan-3: #E2D9D1;
-  --tan-4: #D3C1AE;
-  --orange: #F67F00;
+  --tan-4: #bebebe;
+  --orange: black;
   --text-light: #968c84;
   --text-dark: #615954;
 }
@@ -27,6 +27,16 @@ body {
   padding: 2vmin;
   height: 100vh;
 }
+.fb{
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 4px 1px 0 #000;
+  text-shadow: -1px -1px 0 rgb(16, 114, 159), 1px -1px 0 black, -1px 1px 0 black, 4px 1px 0 rgb(16, 114, 159);
+  outline-style: solid;
+  background-color: rgb(187, 202, 209);
+  outline-width: 8px;
+  outline-color: rgb(16, 114, 159);
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -155,4 +165,277 @@ form:invalid button[type="submit"] {
 button[type="submit"] {
   grid-column: span 2;
   margin: 1vmin 0 0;
+}
+
+nav{
+  outline-style: solid;
+  outline-width: 2px;
+  outline-color: whitesmoke;
+  background-color: rgb(16, 114, 159);
+}
+
+
+.allEnterprises{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: large;
+  text-decoration: none;
+  color: black;
+}
+.allEnterprises:hover{
+  color: rgb(46, 77, 131);
+}
+
+
+.newEnterprise{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: large;
+  text-decoration: none;
+  color: black;
+}
+.newEnterprise:hover{
+  color: rgb(46, 77, 131);
+}
+.Enterprise{
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  text-shadow: 2px 2px 2px white;
+}
+
+.userName{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: large;
+  text-decoration: none;
+  color: black;
+ 
+}
+.userName:hover{
+  text-shadow: 1px 1px 1px white;
+  background-color: gray;
+  border-radius: 4px;
+  outline-offset: -1px;
+  outline-style: solid;
+  outline-width: 2px;
+  outline-color: whitesmoke;
+}
+
+.welcome{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: large;
+  text-decoration: none;
+  color: black;
+}
+
+
+.logOut{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: large;
+  text-decoration: none;
+  color: black;
+}
+.logOut:hover{
+  color: rgb(46, 77, 131);
+}
+.createEmployee{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: large;
+  text-decoration: none;
+  color: black;
+}
+.createEmployee:hover{
+  color: rgb(46, 77, 131);
+}
+
+.timeOut{
+  font-family: 'Courier New', Courier, monospace;
+  text-decoration: none;
+  color: white;
+  outline-width: 4px;
+  outline-style:groove;
+  outline-color: skyblue;
+  cursor:help;
+}
+.createEnt{
+  background-color: rgb(16, 114, 159);
+  outline-offset: 6px;
+  outline-width: 4px;
+  outline-style: solid;
+  outline-color: #000;
+}
+#sub{
+  font-family: 'Courier New', Courier, monospace;
+  color: black;
+  margin-inline: 25.5%;
+  outline-offset: -6px;
+  outline-style: groove;
+  outline-width: 2px;
+  border-radius: 10px;
+}
+#sub:hover{
+  color: white;
+  background-color: rgb(118, 100, 100);
+  outline-offset: -10px;
+}
+.entFields{
+  margin-top: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  outline-style: solid;
+  /* outline-offset: 4px;
+  outline-color: black; */
+  background-color: white;
+  text-shadow: 2px 2px 2px gray;
+  margin-right: 34.2%;
+}
+.entLabels{
+  margin-top: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  color: black;
+  margin-left: 2%; 
+  text-shadow: 2px 2px 2px white;
+  /* background-color: #615954;
+  outline-style:groove;
+  outline-offset: 2px;
+  margin-right: 5%; */
+}
+.companyWrapWrap{
+  background-color: rgb(16, 114, 159);
+  outline-offset: 4px;
+  outline-width: 4px;
+  outline-color: black;
+  outline-style: solid;
+  margin-top: 20px;
+  padding: 10px;
+
+}
+.companyWrap{
+  background-color: #968c84;
+  border-radius: 4px;
+  margin-left: 40%;
+  margin-right: 40%;
+
+  justify-content:space-evenly;
+  outline-color: black;
+  outline-style: solid;
+  outline-width: 2px;
+}
+.delete{
+  font-family: 'Courier New', Courier, monospace;
+  color:rgb(118, 100, 100);
+  outline-width: 1px;
+  outline-color: #000;
+  outline-style: solid;
+  
+}
+.delete:hover{
+  color: maroon;
+  outline-color: maroon;
+}
+
+.update{
+  font-family: 'Courier New', Courier, monospace;
+  color:rgb(118, 100, 100);
+  outline-width: 1px;
+  outline-color: #000;
+  outline-style: solid;
+}
+.update:hover{
+  color:rgb(118, 120, 100);;
+  outline-color: green;
+}
+
+.companyName{
+  text-align: right;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  
+}
+.createEmp{
+
+  background-color: rgb(16, 114, 159);
+  outline-offset: 6px;
+  outline-width: 4px;
+  outline-style: solid;
+  outline-color: #000;
+}
+.newEmployee{
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  text-shadow: 2px 2px 2px white;
+}
+.empLabels{
+    margin-top: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    margin-left: 2%; 
+    text-shadow: 2px 2px 2px white;
+    /* background-color: #615954;
+    outline-style:groove;
+    outline-offset: 2px;
+    margin-right: 5%; */
+}
+.empFields{
+  margin-top: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  outline-style: solid;
+  /* outline-offset: 4px;
+  outline-color: black; */
+  background-color: white;
+  text-shadow: 2px 2px 2px gray;
+  margin-right: 34.2%;
+}
+
+.details{
+  font-family: 'Courier New', Courier, monospace;
+  color:rgb(118, 100, 100);
+  outline-width: 1px;
+  outline-color: #000;
+  outline-style: solid;
+  margin-right: 1200px;
+  margin-left: 150px;
+  margin-top: -60px;
+}
+.details:hover{
+  color:rgb(118, 120, 100);
+  outline-color: green;
+}
+
+.enterprises{
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  text-shadow: 2px 2px 2px white;
+  margin-top: 20px;
+}
+
+.banner{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.edit{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-left: 80px;
+  width: 50%;
+}
+.change{
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  display: flex;
+  text-align: center;
+  margin-left: 0px;
+}
+.change:hover{
+  color: green;
+}
+.entBody{
+  font-family: 'Courier New', Courier, monospace;
+  text-shadow: 2px 2px 2px black;
+}
+.infoNote{
+  font-family: 'Courier New', Courier, monospace;
+  text-shadow: 1px 1px 1px maroon;
+  background-color: gray;
+  outline: black;
+  outline-width: 4px;
+  outline-style: solid;
 }

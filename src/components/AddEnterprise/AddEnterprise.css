@@ -1,0 +1,9 @@
+.infoNote{
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: whitesmoke;
+    background-color: black;
+    outline-style: solid;
+    outline-color: grey;
+    outline-offset: 2px;
+  }

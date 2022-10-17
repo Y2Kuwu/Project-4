@@ -1,10 +1,11 @@
 const mongoose = require('mongoose');
-const employee = require('./employee');
+
 const Schema = mongoose.Schema;
 
 const recordSchema = new Schema({
-    recordID : {},
+   
     violations:{
+        employee: { type: Schema.Types.ObjectId, ref: 'employee', required: true },
         count : {type:Number},
         detail : {type:String ,min_length : 50, required: true},
         severity : {type:Number, default : 1, max : 5},
@@ -19,12 +20,12 @@ const recordSchema = new Schema({
     updown: {
         promotions: {type:Number},
         demotions: {type:Number}
-    }
-    
+    },
+    salary: {type: Number},
 },
 {
     timestamps : true
 })
+module.exports = mongoose.model('Record' , recordSchema);
 
-
-module.exports = mongoose.model(recordSchema);
+// recordID : {},
