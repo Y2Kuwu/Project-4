@@ -52,8 +52,8 @@ async function deleteCompany (req, res){
 async function updateCompany (req, res){
     try{
         // req.body.user = req.user._id;
-        const company = await Company.findByIdAndUpdate(req.params.id);
-        // console.log(req.body);
+        const company = await Company.findByIdAndUpdate({_id: req.params.id}, req.body);
+        console.log(req.bo3dy);
         // console.log(req.params._id);
         res.json(company.id)
     }

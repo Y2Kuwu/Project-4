@@ -33,6 +33,6 @@ export function deleteCompany(id) {
   return sendRequest(`${BASE_URL}/${id}`, 'DELETE');
 }
 
-export function updateCompany(company, id) {
+export function updateCompany(id, company) {
   return sendRequest(`${BASE_URL}/${id}`, 'PUT', company);
 }

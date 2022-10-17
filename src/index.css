@@ -309,8 +309,8 @@ nav{
 .companyWrap{
   background-color: #968c84;
   border-radius: 4px;
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-left: 40%;
+  margin-right: 40%;
 
   justify-content:space-evenly;
   outline-color: black;
@@ -414,7 +414,7 @@ nav{
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin-left: 225px;
+  margin-left: 80px;
   width: 50%;
 }
 .change{
@@ -426,4 +426,16 @@ nav{
 }
 .change:hover{
   color: green;
+}
+.entBody{
+  font-family: 'Courier New', Courier, monospace;
+  text-shadow: 2px 2px 2px black;
+}
+.infoNote{
+  font-family: 'Courier New', Courier, monospace;
+  text-shadow: 1px 1px 1px maroon;
+  background-color: gray;
+  outline: black;
+  outline-width: 4px;
+  outline-style: solid;
 }

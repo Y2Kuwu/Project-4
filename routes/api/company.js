@@ -4,13 +4,13 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn')
 const CompanyCtrl = require('../../controllers/api/company');
 
 
-router.get('/', CompanyCtrl.getCompany);
+router.get('/', CompanyCtrl.getCompany, ensureLoggedIn);
 // router.get('/getEmployee', CompanyCtrl.getEmployee);
-router.post('/', CompanyCtrl.createCompany);
+router.post('/', CompanyCtrl.createCompany, ensureLoggedIn);
 // router.post('/createEmployee', CompanyCtrl.createEmployee);
-router.delete('/:id', CompanyCtrl.deleteCompany);
-router.post('/', CompanyCtrl.createEmployee);
-router.get('/:id', CompanyCtrl.getOneCompany);
-router.put('/:id', CompanyCtrl.updateCompany);
+router.delete('/:id', CompanyCtrl.deleteCompany, ensureLoggedIn);
+router.post('/', CompanyCtrl.createEmployee, ensureLoggedIn);
+router.get('/:id', CompanyCtrl.getOneCompany, ensureLoggedIn);
+router.put('/:id', CompanyCtrl.updateCompany, ensureLoggedIn);
 
 module.exports = router;

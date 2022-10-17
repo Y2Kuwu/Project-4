@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import * as companyAPI from "../../utilities/company-api";
 import { Component } from 'react';
-import UpdateCompany from '../UpdateCompany/UpdateCompany';
 import { Link } from 'react-router-dom';
 import EditEnterprise from '../EditEnterprise/EditEnterprise'
+import UpdateCompany from '../UpdateCompany/UpdateCompany';
 
     export default function MyEnterprise() {
   
@@ -27,6 +27,8 @@ import EditEnterprise from '../EditEnterprise/EditEnterprise'
   }
  
 
+
+
 return(
  <main>
 
@@ -37,17 +39,18 @@ return(
       <div className='companyWrapWrap'>
       {companies.map(company => 
         <div className='companyWrap'>
-          <p>{company.companyName}</p>
+          <p className='entBody'>{company.companyName}</p>
             {!hidden ? 
             <div>
-               <EditEnterprise/>
-              <p>{company.stockSymbol}</p>
-              <p>{company.ceo}</p>
-              <p>{company.regions}</p>
-              <p>{company.officeCount}</p>
+              <p className='entBody'>{company.stockSymbol}</p>
+              <p className='entBody'>{company.ceo}</p>
+              <p className='entBody'>{company.regions}</p>
+              <p className='entBody'>{company.officeCount}</p>
             </div>:null}
-           
+         
           <button className='delete' onClick={() => {handleDeleteCompanies(company._id)}}>Delete</button>
+         <Link to= {`/UpdateCompany/${company._id}`} ><button className='update'>Update</button></Link>
+
         <div>
         </div>
         </div>)}

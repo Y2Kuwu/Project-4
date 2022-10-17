@@ -11,7 +11,6 @@ import AddEnterprise   from '../../components/AddEnterprise/AddEnterprise';
 import UpdateCompany from '../../components/UpdateCompany/UpdateCompany';
 import { CreateEmployee } from '../../components/CreateEmployee/CreateEmployee';
 import {getUser} from '../../utilities/users-service';
-
 function App() {
     // set the user by calling getUser function
     const [user, setUser] = useState(getUser());
@@ -33,7 +32,7 @@ function App() {
                         <Route path="/AddEnterprise" element={<AddEnterprise user={user} setUser={setUser}/>}/>
                         <Route path="/MyEnterprise" element={<MyEnterprise user={user} setUser={setUser}/>}/>
                         <Route path="/CreateEmployee" element={<CreateEmployee user={user} setUser={setUser}/>}/>
-                         <Route path="/UpdateCompany/:id" component={UpdateCompany}/>
+                        <Route path="/UpdateCompany/:id" element={<UpdateCompany user={user} setUser={setUser}/>}/>
                     </Routes>
                     
                

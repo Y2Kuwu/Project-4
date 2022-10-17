@@ -28,7 +28,7 @@ const companySchema = new Schema({
     companyName: {type : String},
     stockSymbol: {type : String ,maxLength: 4},
     ceo: {type: String, isSuper: true},
-    regions: {type: Array},
+    regions: {type: String},
     officeCount: {type: Number}
     // employeeCount: {type: Number},
     // currAnnual: {type: Number},
