@@ -308,6 +308,7 @@ nav{
 }
 .companyWrap{
   background-color: #968c84;
+  opacity: .8;
   border-radius: 4px;
   margin-left: 40%;
   margin-right: 40%;
