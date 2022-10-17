@@ -15,10 +15,6 @@ function App() {
     // set the user by calling getUser function
     const [user, setUser] = useState(getUser());
 
-    // const [company, setCompany] = useState(getCompany());
-    // const [employee, setEmployee] = useState(getEmployee());
-    // const [record, setRecord] = useState(getRecord());
-
 
     return (
       

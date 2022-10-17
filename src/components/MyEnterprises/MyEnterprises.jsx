@@ -6,8 +6,6 @@ import EditEnterprise from '../EditEnterprise/EditEnterprise'
 import UpdateCompany from '../UpdateCompany/UpdateCompany';
 
     export default function MyEnterprise() {
-  
-      
       const [companies, setCompanies] = useState([]);
       const [hidden, setHidden] = useState(true);
 
@@ -26,9 +24,6 @@ import UpdateCompany from '../UpdateCompany/UpdateCompany';
     window.location.reload()
   }
  
-
-
-
 return(
  <main>
 

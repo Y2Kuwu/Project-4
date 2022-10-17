@@ -23,8 +23,8 @@ export default function NavBar({user, setUser}) {
             &nbsp; | &nbsp;
             <Link to="/CreateEmployee" className = "createEmployee">Add New Employee</Link>
             &nbsp; | &nbsp;
-            <Link to="/UpdateCompany" className = "updateCompany">Update Enterprise</Link>
-            &nbsp; | &nbsp;
+            {/* <Link to="/UpdateCompany" className = "updateCompany">Update Enterprise</Link>
+            &nbsp; | &nbsp; */}
             <Link to={""} onClick={handleLogOut} className = "logOut">Logout</Link>
             <div>
             <span className = "welcome">Welcome, </span>
