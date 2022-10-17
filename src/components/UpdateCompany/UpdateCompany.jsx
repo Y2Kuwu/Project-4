@@ -1,6 +1,7 @@
 import { Component } from "react";
-import * as companyAPI from "../../utilities/company-api";
+import { getOneCompany } from "../../utilities/company-api";
 const axios = require('axios').default;
+
 
 class UpdateCompany extends Component {
     constructor(props){
@@ -15,11 +16,11 @@ class UpdateCompany extends Component {
         }
     }
     componentDidMount = () => {
-    this.getOneCompanyId();
+    getOneCompany();
     }
 
-getOneCompanyId() {
- axios.get('http://localhost:3000/MyEnterprises/UpdateCompany/' + this.props.match.params.id)
+getOneCompany() {
+ axios.get('http://localhost:3000/UpdateCompany' + this.props.match.params.id)
  .then((response) => {
  this.setState({
  companyName: response.data.companyName,
@@ -42,7 +43,7 @@ getOneCompanyId() {
  handleSubmit = (event) => {
  event.preventDefault();
  const { companyName, stockSymbol, ceo, regions, officeCount } = this.state;
- axios.post('http://localhost:300/MyEnterprises/UpdateCompany/' + this.props.match.params.id, {
+ axios.put('http://localhost:3000/UpdateCompany' + this.props.match.params.id, {
  companyName: companyName,
  stockSymbol: stockSymbol,
  ceo: ceo,
@@ -64,9 +65,9 @@ getOneCompanyId() {
 <div>
     <h1 className = "Enterprise">Update Enterprise</h1>
     <div className = "createEnt">
-    <form autoComplete="off" onSubmit={this.handleSubmit}>
+    <form autoComplete="off"  onSubmit={this.handleSubmit}>
     <label className='entLabels'>Name</label>
-    <input type="text" name="name" className='entFields' value={this.state.companyName} onChange={this.handleChange} required />
+    <input type="text" name="companyName" className='entFields' value={this.state.companyName} onChange={this.handleChange} required />
     <label className='entLabels'>Stock ID</label>  
     <input type="text" name="stockSymbol" className='entFields' value={this.state.stockSymbol} onChange={this.handleChange} required />
     <label className='entLabels'>CEO</label>  

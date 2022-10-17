@@ -1,40 +1,3 @@
-// import './AddEnterprise.css'
-// import { Component } from 'react';
-// import { render } from 'react-dom';
-// // import App from '../../pages/App/App';
-// import Add from '../MyEnterprises/MyEnterprises';
-// import MyEnterprise from '../MyEnterprises/MyEnterprises';
-
-// export default class AddEnterprise extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       details: [{
-//         name: '',
-//         stockSymbol: '',
-//         ceo: '',
-//         regions: '',
-//         officeCount: '',
-//       }]
-//     };
-//   }
-
-//   render() {
-//     return (
-//       <div>
-//         {this.state.detail.map(detail => <Add key={detail.all()} detail={detail} data={this.props.data.location}/>)}
-//       </div>
-//     );
-//   }
-// }
-// render(<MyEnterprise location={{}}/>, document.getElementById('root'));
-
-// companyName: this.props.detail.companyName,
-//     stockSymbol: this.props.detail.stockSymbol,
-//     ceo: this.props.detail.ceo,
-//     regions: this.props.detail.regions,
-//     officeCount: this.props.detail.officeCount,
-
 import { Component } from 'react';
 import { createCompany} from '../../utilities/company-api';
 // import {MyEnterprise} from '/components/MyEnterprises/MyEnterprises';
@@ -54,6 +17,8 @@ class AddEnterprise extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+
+
 handleChange (evt)  {
   this.setState({[evt.target.name]: evt.target.value});
 };
@@ -70,11 +35,7 @@ handleSubmit (evt) {
       regions : regions,
       officeCount : officeCount,
     })
-    // const j = JSON.stringify(body);
-    // console.log(j)
-    // createCompany(body);
-    alert('Successfully created: ' + this.state.name + '!')
-    // this.props.setCompany(company);
+    alert('Successfully created: ' + this.state.companyName + '!')
     this.props.history.push('/');
   } catch {
     this.setState({ error: 'Company creation failed' });
@@ -89,7 +50,7 @@ render(){
     <div className = "createEnt">
     <form autoComplete="off" onSubmit={this.handleSubmit}>
     <label className='entLabels'>Name</label>
-    <input type="text" name="name" className='entFields' defaultValue={this.state.companyName} onChange={this.handleChange} required />
+    <input type="text" name="companyName" className='entFields' defaultValue={this.state.companyName} onChange={this.handleChange} required />
     <label className='entLabels'>Stock ID</label>  
     <input type="text" name="stockSymbol" className='entFields' defaultValue={this.state.stockSymbol} onChange={this.handleChange} required />
     <label className='entLabels'>CEO</label>  

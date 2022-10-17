@@ -3,6 +3,7 @@ import * as companyAPI from "../../utilities/company-api";
 import { Component } from 'react';
 import UpdateCompany from '../UpdateCompany/UpdateCompany';
 import { Link } from 'react-router-dom';
+import EditEnterprise from '../EditEnterprise/EditEnterprise'
 
     export default function MyEnterprise() {
   
@@ -24,11 +25,11 @@ import { Link } from 'react-router-dom';
     const deleteComp = await companyAPI.deleteCompany(id);
     window.location.reload()
   }
-
+ 
 
 return(
  <main>
-    
+
       <div className='banner'>
       <h1 className='enterprises'>Companies</h1>      
       <button className = "details" onClick={() => setHidden( y=> !y)}> Detailed view </button>
@@ -39,12 +40,13 @@ return(
           <p>{company.companyName}</p>
             {!hidden ? 
             <div>
+               <EditEnterprise/>
               <p>{company.stockSymbol}</p>
               <p>{company.ceo}</p>
               <p>{company.regions}</p>
               <p>{company.officeCount}</p>
             </div>:null}
-            <Link to={`${UpdateCompany}/` + company._id} className="update">Update</Link>
+           
           <button className='delete' onClick={() => {handleDeleteCompanies(company._id)}}>Delete</button>
         <div>
         </div>
@@ -53,6 +55,3 @@ return(
     </main>
   );
 }
-
-
- 
