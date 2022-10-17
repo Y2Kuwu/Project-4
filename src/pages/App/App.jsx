@@ -11,7 +11,6 @@ import AddEnterprise   from '../../components/AddEnterprise/AddEnterprise';
 import { CreateEmployee } from '../../components/CreateEmployee/CreateEmployee';
 import {getUser} from '../../utilities/users-service';
 
-
 function App() {
     // set the user by calling getUser function
     const [user, setUser] = useState(getUser());
@@ -49,6 +48,3 @@ function App() {
 export default App;
 
 
-  {/* <CompanyList company={company} setCompany={setCompany}/>
-                    <EmployeeList employee={employee} setEmployee={setEmployee}/>
-                    <RecordList record={record} setRecord={setRecord}/> */}

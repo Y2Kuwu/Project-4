@@ -1,69 +1,86 @@
-// import { render } from "@testing-library/react";
-// import { useState, useEffect } from "react";
-// // const { AddEnterprise } = require("../AddEnterprise/AddEnterprise");
-// import * as MyEnterprise from "../MyEnterprises/MyEnterprises";
+import { Component } from "react";
+import * as companyAPI from "../../utilities/company-api";
+const axios = require('axios').default;
 
-// import * as companyAPI from "../../utilities/company-api";
-
-
-// export default function UpdateCompany(props){
-
-
-
-//   return(
-//     <>
-//     <h1>Update Company</h1>
-//     <form onSubmit={handleSubmit}>
+class UpdateCompany extends Component {
+    constructor(props){
+    super(props);
     
-//     </form>
+    this.state = {
+        companyName: '',
+        stockSymbol: '',
+        ceo: '',
+        regions: '',
+        officeCount: '',
+        }
+    }
+    componentDidMount = () => {
+    this.getOneCompanyId();
+    }
 
-
-//     </form>
-//     </>
-//   )
-// }
-
-
-
-
-{/* <form onSubmit={handleSubmit}>
-<form autoComplete="off" onSubmit={this.handleSubmit}>
-<label className='entLabels'>Name</label>
-<input type="text" name="name" className='entFields' required />
-<label className='entLabels'>Stock ID</label>  
-<input type="text" name="stockSymbol" className='entFields'  required />
-<label className='entLabels'>CEO</label>  
-<input type="text" name="ceo" className='entFields'  required />
-<label className='entLabels'>Region(s)</label>  
-<input type ="text" name="regions" className='entFields'  required />
-<label className='entLabels'>Number of offices</label>  
-<input type="text" name="officeCount" className='entFields'  required /> */}
-
-
-
-
-// useEffect(function (){
-//   async function getACompany(){
-//   const companies = await companyAPI.getOneCompany();
-//   setCompDetails(companies);
-//   console.log(companies)
-// }
-// getACompany();
-// }, [])
-
-// function update(){
-//   const compDetails = comp.filter(co => co._id !== comp);
-//   setDetails()
-// }
-
-// async function handleSubmit(evt) {
-//   evt.preventDefault();
-//   // const id = this.props.id;
-//     const payload = {
-//     user: user,
-//     companies: comp,
-   
-//   }
-//   const updateCompany = await companyAPI.updateCompany(payload, id)
-//   console.log(updateCompany);
-// }
+getOneCompanyId() {
+ axios.get('http://localhost:3000/MyEnterprises/UpdateCompany/' + this.props.match.params.id)
+ .then((response) => {
+ this.setState({
+ companyName: response.data.companyName,
+ stockSymbol: response.data.stockSymbol,
+ ceo: response.data.ceo,
+ regions: response.data.regions,
+ officeCount: response.data.officeCount
+ });
+ })
+ .catch((error) => {
+ console.log(error);
+ })
+ }
+ 
+ handleChange = (event) => {
+ this.setState({ [event.target.name]: event.target.value });
+ }
+ 
+ // To update the record on submit
+ handleSubmit = (event) => {
+ event.preventDefault();
+ const { companyName, stockSymbol, ceo, regions, officeCount } = this.state;
+ axios.post('http://localhost:300/MyEnterprises/UpdateCompany/' + this.props.match.params.id, {
+ companyName: companyName,
+ stockSymbol: stockSymbol,
+ ceo: ceo,
+ regions: regions,
+ officeCount: officeCount
+ })
+ .then((response) => {
+ console.log(response);
+ this.props.history.push('/');
+ })
+ .catch((error) => {
+ console.log(error);
+ });
+ 
+ }
+ 
+ render() {
+ return (
+<div>
+    <h1 className = "Enterprise">Update Enterprise</h1>
+    <div className = "createEnt">
+    <form autoComplete="off" onSubmit={this.handleSubmit}>
+    <label className='entLabels'>Name</label>
+    <input type="text" name="name" className='entFields' value={this.state.companyName} onChange={this.handleChange} required />
+    <label className='entLabels'>Stock ID</label>  
+    <input type="text" name="stockSymbol" className='entFields' value={this.state.stockSymbol} onChange={this.handleChange} required />
+    <label className='entLabels'>CEO</label>  
+    <input type="text" name="ceo" className='entFields' value={this.state.ceo} onChange={this.handleChange} required />
+    <label className='entLabels'>Region(s)</label>  
+    <input type ="text" name="regions" className='entFields' value={this.state.regions} onChange={this.handleChange} required />
+    <label className='entLabels'>Number of offices</label>  
+    <input type="text" name="officeCount" className='entFields' value={this.state.officeCount} onChange={this.handleChange} required />
+    <button type="submit" id = "sub">Create</button>  
+    </form>
+    <p className='infoNote'>Additional information will be required after initial creation</p>
+    </div>
+    </div>
+ )}
+}
+ 
+ export default UpdateCompany

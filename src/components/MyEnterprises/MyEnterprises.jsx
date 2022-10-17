@@ -1,15 +1,16 @@
 import { useState, useEffect } from 'react';
 import * as companyAPI from "../../utilities/company-api";
 import { Component } from 'react';
-// import { AddEnterprise } from '../AddEnterprise/addEnterprise';
+import UpdateCompany from '../UpdateCompany/UpdateCompany';
 import { Link } from 'react-router-dom';
 
     export default function MyEnterprise() {
   
-    const [companies, setCompanies] = useState([]);
-    const [hidden, setHidden] = useState(true);
-   
-  
+      
+      const [companies, setCompanies] = useState([]);
+      const [hidden, setHidden] = useState(true);
+
+
    useEffect(() =>{
     async function getCompanies() {
       const companies = await companyAPI.getCompany();
@@ -43,7 +44,7 @@ return(
               <p>{company.regions}</p>
               <p>{company.officeCount}</p>
             </div>:null}
-            <Link to={"UpdateCompany/" + company._id} className="update">Update</Link>
+            <Link to={`${UpdateCompany}/` + company._id} className="update">Update</Link>
           <button className='delete' onClick={() => {handleDeleteCompanies(company._id)}}>Delete</button>
         <div>
         </div>
@@ -52,6 +53,6 @@ return(
     </main>
   );
 }
-  
+
 
  
