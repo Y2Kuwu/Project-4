@@ -3,7 +3,7 @@ import * as companyAPI from "../../utilities/company-api";
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
 import EditEnterprise from '../EditEnterprise/EditEnterprise'
-import UpdateCompany from '../UpdateCompany/UpdateCompany';
+import UpdateCompany from '../UpdateEnterprise/UpdateEnterprise';
 
     export default function MyEnterprise() {
       const [companies, setCompanies] = useState([]);
@@ -15,7 +15,7 @@ import UpdateCompany from '../UpdateCompany/UpdateCompany';
       const companies = await companyAPI.getCompany();
       setCompanies(companies);
     }
-    
+
     getCompanies();
   }, [])
 
@@ -28,7 +28,7 @@ return(
  <main>
 
       <div className='banner'>
-      <h1 className='enterprises'>Companies</h1>      
+      <h1 className='enterprises'>My Enterprises</h1>      
       <button className = "details" onClick={() => setHidden( y=> !y)}> Detailed view </button>
       </div>
       <div className='companyWrapWrap'>
