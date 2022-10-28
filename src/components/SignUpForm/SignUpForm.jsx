@@ -53,7 +53,9 @@ export default class SignUpForm extends Component {
 
             <div>
                 <div className="form-container">     
-               
+                {
+                <Navigate to = "signUpEmployee" replace = {true} onChange={this.handleChange}/>  
+                }
                     
                     <form autoComplete="off" onSubmit={(evt)=> this.handleSubmit(evt)}>
                         <label className = "loginLabels">Name</label>

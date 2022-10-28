@@ -24,18 +24,18 @@ const employeeSchema = new Schema({
 
 const companySchema = new Schema({
     //connected to user
-    user: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+    user: { type: Schema.Types.ObjectId, ref: 'User'},
     companyName: {type : String},
     stockSymbol: {type : String ,maxLength: 4},
     ceo: {type: String, isSuper: true},
     regions: {type: String},
-    officeCount: {type: Number}
+    officeCount: {type: Number},
     // employeeCount: {type: Number},
     // currAnnual: {type: Number},
     // prevAnnual: {type: Number},
     // stock: {type: Number},
     // has array of employees
-    // employeeData: [employeeSchema]
+    employees: [employeeSchema]
     
 },
 {

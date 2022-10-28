@@ -6,9 +6,10 @@ import AuthPage from '../AuthPage/AuthPage';
 
 // Import the following components
 import NavBar from '../../components/NavBar/NavBar';
+import AllEnterprises from '../../components/AllEnterprises/AllEnterprises';
 import MyEnterprise from '../../components/MyEnterprises/MyEnterprises';
 import AddEnterprise   from '../../components/AddEnterprise/AddEnterprise';
-import UpdateCompany from '../../components/UpdateCompany/UpdateCompany';
+import UpdateEnterprise from '../../components/UpdateEnterprise/UpdateEnterprise';
 import { CreateEmployee } from '../../components/CreateEmployee/CreateEmployee';
 import {getUser} from '../../utilities/users-service';
 function App() {
@@ -28,7 +29,8 @@ function App() {
                         <Route path="/AddEnterprise" element={<AddEnterprise user={user} setUser={setUser}/>}/>
                         <Route path="/MyEnterprise" element={<MyEnterprise user={user} setUser={setUser}/>}/>
                         <Route path="/CreateEmployee" element={<CreateEmployee user={user} setUser={setUser}/>}/>
-                        <Route path="/UpdateCompany/:id" element={<UpdateCompany user={user} setUser={setUser}/>}/>
+                        <Route path="/UpdateEnterprise/:id" element={<UpdateEnterprise user={user} setUser={setUser}/>}/>
+                        <Route path="/AllEnterprises" element={<AllEnterprises user={user} setUser={setUser}/>}/>
                     </Routes>
                     
                
