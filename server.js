@@ -37,7 +37,7 @@ app.use('/api/company', require('./routes/api/company'));
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX requests
 app.get('/*', function (req, res) {
-    res.sendFile(path.join(__dirname, 'client','build', 'index.html'));
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 // Configure to use port 3001 instead of 3000 during
