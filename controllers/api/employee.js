@@ -1,22 +1,30 @@
 const Company = require('../../models/company');
 const Employee = require('../../models/employee');
 
+
+// company.populate('employees').exec(function(err, company){
+//     Employee.find({_id: {$nin: company.employee}})
+//     //added employee population per company 
+//     //remove list in employees?
+// })
+
+
 async function createEmployee (req,res){
     try{
         req.body.user = req.user._id;
-        const employee = await Employee.create(req.body);
-        const company = await Company.findById(req.params.id)
-        company.push(employee);
-        company.save()
+        const company = Company.findById(req.params.id)
+        const employee = await Employee.create(req.body)
+        company.push(employee)
+        company.save();
         res.json(employee)
         
         }   
         catch(error){
             res.status(400).json(error);
             console.log("Failed to create new employee")
-            
         }
     }
+
 async function getEmployeeByAtt (req,res){
     try{
     req.body.user = req.user._id;
@@ -58,7 +66,6 @@ async function updateEmployee (req, res){
 
 async function deleteEmployee (req, res){
     try{
-        // {_id: req.params.id, user: req.user._id}
     const employee = await employee.findByIdAndDelete(req.params.id);
     console.log(req.body)
     res.json(employee)

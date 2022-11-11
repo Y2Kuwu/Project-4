@@ -18,10 +18,11 @@ const companySchema = new Schema({
     // stock: {type: Number},
     // has array of employees
     //employees: [employeeSchema]
+
     employees: [{
         type:Schema.Types.ObjectId,
         ref: 'Employee'
-      }],
+      }]
     
 },
 {

@@ -1,5 +1,4 @@
 const Company = require('../../models/company');
-const employee = require('../../models/employee');
 const Employee = require('../../models/employee');
 
 
@@ -15,7 +14,7 @@ async function getOneCompany (req, res){
         const company = await Company.findById(req.params.id);
         console.log(req.body);
         company.populate('employees').exec(function(err, company){
-            Employee.find({_id: {$nin: company.employee}})
+            Employee.find({_id: {$nin: company.employees}})
             //added employee population per company 
             //remove list in employees?
         })
