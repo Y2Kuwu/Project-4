@@ -17,7 +17,11 @@ const companySchema = new Schema({
     // prevAnnual: {type: Number},
     // stock: {type: Number},
     // has array of employees
-    employees: [employeeSchema]
+    //employees: [employeeSchema]
+    employees: [{
+        type:Schema.Types.ObjectId,
+        ref: 'Employee'
+      }],
     
 },
 {
