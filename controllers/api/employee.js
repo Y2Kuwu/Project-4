@@ -41,7 +41,7 @@ catch(error){
 async function employeeCompList (req,res){
     try{
     req.body.user = req.user._id;
-    const company = await Company.findById(req.params.id);
+    //const company = await Company.findById(req.params.id);
     const employee = await Employee.find({});
     console.log(req.body);
     res.json(employee)
