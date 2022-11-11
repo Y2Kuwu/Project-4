@@ -10,9 +10,11 @@ export function createCompany(compForm){
   return sendRequest(BASE_URL, 'POST', compForm );
 }
 
-export function createEmployee(employeeForm){
-  return sendRequest(BASE_URL, 'POST', employeeForm );
-}
+
+//added tp employee-api
+// export function createEmployee(employeeForm){
+//   return sendRequest(BASE_URL, 'POST', employeeForm );
+// }
 
 export function getCompany() {
     return sendRequest(BASE_URL);

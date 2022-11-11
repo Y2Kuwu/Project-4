@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { createEmployee} from '../../utilities/company-api';
+import { createEmployee} from '../../utilities/employee-api';
 
 export class CreateEmployee extends Component {
   constructor(props){
