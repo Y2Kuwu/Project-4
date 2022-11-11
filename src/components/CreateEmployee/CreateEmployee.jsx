@@ -1,12 +1,14 @@
 import { Component } from 'react';
 import { createEmployee} from '../../utilities/employee-api';
 
+
 export class CreateEmployee extends Component {
   constructor(props){
     super(props);
     this.state = {value: ''};
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+   
   }
 
 
@@ -21,12 +23,11 @@ handleChange = (evt) => {
 handleSubmit = async (evt) => {
   evt.preventDefault();
   try {
-   
     const employeeForm = { ...this.state };
     const employee = await createEmployee(employeeForm);
     // Baby step 
     this.props.setEmployee(employee);
-   
+    
   } catch {
     // An error happened on the server
     this.setState({ error: 'Employee creation failed' });
@@ -36,10 +37,12 @@ handleSubmit = async (evt) => {
 
 render(){
   return (
+    
     <div>
     <h1 className = "newEmployee">Onboard Employee</h1>
     <div className='createEmp'>
-    
+ 
+
     <form autoComplete="off" onSubmit={this.handleSubmit}>
     <label className = "empLabels">First name</label>
     <input type="text" name="firstName" className = "empFields" value={this.state.firstName} onChange={this.handleChange} required />
@@ -57,8 +60,9 @@ render(){
     </form>
     <p className='infoNote'>Additional information will be required after initial creation</p>
     </div>
-    
+   
     </div>
+    
     );
   }
 }

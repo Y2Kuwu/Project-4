@@ -444,3 +444,12 @@ nav{
   outline-width: 4px;
   outline-style: solid;
 }
+
+
+
+
+.addEmp {
+  white-space: nowrap;
+  background-color: lightblue;
+  padding: 5px;
+}
