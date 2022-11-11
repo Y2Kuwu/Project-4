@@ -23,7 +23,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--tan-4);
+  background-image: url('/public/screenshots/crowd.png');
+ background-size: 30%;
+ background-position: center;
+ background-position: bottom;
+ background-repeat: no-repeat;
   padding: 2vmin;
   height: 100vh;
 }
