@@ -10,7 +10,7 @@ import AllEnterprises from '../../components/AllEnterprises/AllEnterprises';
 import MyEnterprise from '../../components/MyEnterprises/MyEnterprises';
 import AddEnterprise   from '../../components/AddEnterprise/AddEnterprise';
 import UpdateEnterprise from '../../components/UpdateEnterprise/UpdateEnterprise';
-import { CreateEmployee } from '../../components/CreateEmployee/CreateEmployee';
+import CreateEmployee from '../../components/CreateEmployee/CreateEmployee';
 import {getUser} from '../../utilities/users-service';
 function App() {
     // set the user by calling getUser function

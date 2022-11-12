@@ -15,9 +15,8 @@ const Employee = require('../../models/employee');
 async function createEmployee (req,res){
     try{
         req.body.user = req.user._id;
-       
         const employee = await Employee.create(req.body)
-        
+        console.log(req.body)
         res.json(employee)
         
         }   
@@ -27,10 +26,10 @@ async function createEmployee (req,res){
         }
     }
 
-async function onboardEmployee (req,res){
-    const company = Company.findById(req.params.id);
+// async function onboardEmployee (req,res){
+//     const company = Company.findById(req.params.id);
     
-}
+// }
 
 async function getEmployeeByAtt (req,res){
     try{

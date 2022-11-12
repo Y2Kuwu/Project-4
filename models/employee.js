@@ -13,6 +13,7 @@ const employeeSchema = new Schema({
     },
     dob : {type: Date},
     credentials: {type:Array},
+    notes: {type:String, required: false},
     isUser: {type: Boolean, default: false},
     isSuper: { type: Boolean, required: true, default: false},
     // record: recordSchema,
