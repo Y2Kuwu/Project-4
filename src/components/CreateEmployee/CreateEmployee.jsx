@@ -2,13 +2,13 @@ import { Component } from 'react';
 import { createEmployee} from '../../utilities/employee-api';
 
 
+
 export class CreateEmployee extends Component {
   constructor(props){
     super(props);
     this.state = {value: ''};
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-   
   }
 
 
@@ -35,6 +35,7 @@ handleSubmit = async (evt) => {
 };
 
 
+
 render(){
   return (
     
@@ -56,7 +57,7 @@ render(){
     <input type="date" name="dob" className = "empFields" value={this.state.dob} onChange={this.handleChange} required />
     <label className = "empLabels">Credential list</label>  
     <input type="text" name="credentials" className = "empFields" value={this.state.credentials} onChange={this.handleChange} required />
-            <button type="submit" id= "sub">Create</button>   
+    <label className = "empLabels">Employee of</label>    
     </form>
     <p className='infoNote'>Additional information will be required after initial creation</p>
     </div>
