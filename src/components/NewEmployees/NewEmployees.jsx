@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import * as employeeAPI from "../../utilities/employee-api"
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 
-
+{/* <Link to= {`/UpdateCompany/${company._id}`} ><button className='update'>Update</button></Link> */}
     export default function NewEmployees() {
-      const [companies, setEmployees] = useState([]);
+      const [employees, setEmployees] = useState([]);
       const [hidden, setHidden] = useState(true);
 
 
@@ -26,7 +26,7 @@ return(
  <main>
 
       <div className='banner'>
-      <h1 className='newEmps'>My Enterprises</h1>      
+      <h1 className='newEmps'>New Employees</h1>      
       <button className = "details" onClick={() => setHidden( y=> !y)}> Detailed view </button>
       </div>
       <div className='employeeWrapWrap'>
@@ -36,12 +36,12 @@ return(
             {!hidden ? 
             <div>
               <p className='entBody'>{employee.firstName+" "+LastName}</p>
-              <p className='entBody'>{company.role}</p>
-              <p className='entBody'>{company.credentials}</p>
+              <p className='entBody'>{employee.role}</p>
+              <p className='entBody'>{employee.credentials}</p>
             </div>:null}
          
-          <button className='delete' onClick={() => {handleDeleteEmps(company._id)}}>Delete</button>
-         <Link to= {`/UpdateCompany/${company._id}`} ><button className='update'>Update</button></Link>
+          <button className='delete' onClick={() => {handleDeleteEmps(employee._id)}}>Delete</button>
+        
                 
         <div>
         </div>

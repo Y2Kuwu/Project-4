@@ -3,7 +3,7 @@ import { createEmployee} from '../../utilities/employee-api';
 
 
 
-export class CreateEmployee extends Component {
+ class CreateEmployee extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -21,7 +21,7 @@ export class CreateEmployee extends Component {
 
 
 
-handleChange = (evt) => {
+handleChange  (evt)  {
   this.setState({[evt.target.name]: evt.target.value});
 };
 
@@ -37,6 +37,7 @@ handleSubmit  (evt) {
       duties : duties,
       credentials : credentials,
       notes: notes,
+      
     })
     alert('Successfully created new employee: ' + this.state.firstName + this.state.lastName + '!')
     this.props.history.push('/');
@@ -55,8 +56,6 @@ render(){
     <div>
     <h1 className = "newEmployee">Onboard Employee</h1>
     <div className='createEmp'>
- 
-
     <form autoComplete="off" onSubmit={this.handleSubmit}>
     <label className = "empLabels">First name</label>
     <input type="text" name="firstName" className = "empFields" value={this.state.firstName} onChange={this.handleChange} required />
@@ -71,7 +70,7 @@ render(){
     <label className = "empLabels">Credential list</label>  
     <input type="text" name="credentials" className = "empFields" value={this.state.credentials} onChange={this.handleChange} required />
     <label className = "empLabels">Notes</label>  
-    <input type="text" name="notes" className = "empFields" value={this.state.notes} onChange={this.handleChange} required />
+    <input type="text" name="notes" className = "empFields" value={this.state.notes} onChange={this.handleChange} />
             <button type="submit" id= "sub">Create</button>   
     </form>
     <p className='infoNote'>Additional information will be required after initial creation</p>

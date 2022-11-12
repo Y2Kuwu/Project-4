@@ -15,10 +15,8 @@ const Employee = require('../../models/employee');
 async function createEmployee (req,res){
     try{
         req.body.user = req.user._id;
-        const employee = await Employee.create(req.body)
-        console.log(req.body)
+        const employee = await Employee.create(req.body);
         res.json(employee)
-        
         }   
         catch(error){
             res.status(400).json(error);
