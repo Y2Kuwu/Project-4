@@ -30,63 +30,63 @@ async function createEmployee (req,res){
     
 // }
 
-// async function getEmployeeByAtt (req,res){
-//     try{
-//     req.body.user = req.user._id;
-//     const employee = await Employee.findById(req.params.id);
-//     console.log(req.body);
-//     res.json(employee)
-// }
-// catch(error){
-//     res.status(400).json(error);
-//     console.log("Cannot find employee details")
-// }
-// }
+async function getEmployeeByAtt (req,res){
+    try{
+    req.body.user = req.user._id;
+    const employee = await Employee.findById(req.params.id);
+    console.log(req.body);
+    res.json(employee)
+}
+catch(error){
+    res.status(400).json(error);
+    console.log("Cannot find employee details")
+}
+}
 
-// async function employeeCompList (req,res){
-//     try{
-//     req.body.user = req.user._id;
-//     //const company = await Company.findById(req.params.id);
-//     const employee = await Employee.find({});
-//     console.log(req.body);
-//     res.json(employee)
-// }
-// catch(error){
-//     res.status(400).json(error);
-//     console.log("Cannot find employee details")
-// }
-// }
+async function employeeCompList (req,res){
+    try{
+    req.body.user = req.user._id;
+    //const company = await Company.findById(req.params.id);
+    const employee = await Employee.find({});
+    console.log(req.body);
+    res.json(employee)
+}
+catch(error){
+    res.status(400).json(error);
+    console.log("Cannot find employee details")
+}
+}
 
-// async function updateEmployee (req, res){
-//     try{
-//         const employee = await Employee.findByIdAndUpdate({_id: req.params.id}, req.body);
-//         console.log(req.body);
-//         res.json(employee.id)
-//     }
-//     catch(error){
-//         res.status(400).json(error);
-//         console.log("Cannot find company employee")
-//     }
-// }
+async function updateEmployee (req, res){
+    try{
+        const employee = await Employee.findByIdAndUpdate({_id: req.params.id}, req.body);
+        console.log(req.body);
+        res.json(employee.id)
+    }
+    catch(error){
+        res.status(400).json(error);
+        console.log("Cannot find company employee")
+    }
+}
 
-// async function deleteEmployee (req, res){
-//     try{
-//     const employee = await employee.findByIdAndDelete(req.params.id);
-//     console.log(req.body)
-//     res.json(employee)
-//     }   
-//     catch(error){
-//         res.status(400).json(error);
-//         console.log("Failed to delete employee")
-//     }
-// }
+async function deleteEmployee (req, res){
+    try{
+    const employee = await employee.findByIdAndDelete(req.params.id);
+    console.log(req.body)
+    res.json(employee)
+    }   
+    catch(error){
+        res.status(400).json(error);
+        console.log("Failed to delete employee")
+    }
+}
 
 
     module.exports = {
         createEmployee,
-        // getEmployeeByAtt,
-        // employeeCompList,
-        // updateEmployee,
-        // deleteEmployee,
+        getEmployeeByAtt,
+        employeeCompList,
+        updateEmployee,
+        deleteEmployee,
 
     }

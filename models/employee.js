@@ -3,17 +3,17 @@ const Schema = mongoose.Schema;
 
 const employeeSchema = new Schema({
     user: { type: Schema.Types.ObjectId, ref: 'User'},
-    //name : {
+    name : {
         firstName: {type: String},
         lastName: {type: String},
-    //    },
-    //role : {
+       },
+    role : {
         title :{type: String},
-        duties:{type:String},
-   // },
+        duties:{type:Array},
+    },
     dob : {type: Date},
-    credentials: {type: String},
-    notes: {type:String},
+    credentials: {type: Array},
+    notes: {type:String, required:false},
     //isUser: {type: Boolean, default: false},
     //isSuper: { type: Boolean, required: true, default: false},
     // record: recordSchema,

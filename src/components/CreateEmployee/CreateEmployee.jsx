@@ -1,7 +1,8 @@
 import { Component } from 'react';
 import { createEmployee } from '../../utilities/employee-api';
+
  class CreateEmployee extends Component {
-  //export default function CreateEmployee({employees}){
+
   constructor(props){
   super(props);
   // const [employee, setEmployee] = useState({
@@ -34,6 +35,7 @@ handleSubmit(evt){
     //const {firstName, lastName, title, duties, credentials, notes} = this.state;
     createEmployee(this.state,
     {
+    
       // firstName: evt.firstName.value,
       // lastName: evt.lastName.value,
       // title: evt.title.value,
@@ -49,11 +51,11 @@ handleSubmit(evt){
       
      
     })
-
+    alert('Successfully created new employee: ' + this.state.firstName + " " +this.state.lastName + '!')
     //const createEmp = await employeeAPI.createEmployee(employee);
     //setEmployee(createEmp)
-  
-    alert('Successfully created new employee: ' + this.state.firstName + this.state.lastName + '!')
+   
+    
     //this.props.history.push('/');
   } catch {
     // An error happened on the server
@@ -84,7 +86,7 @@ handleSubmit(evt){
     <label className = "empLabels">Credential list</label>  
     <input type="text" name="credentials" className = "empFields" value={this.state.credentials} onChange={this.handleChange} required />
     <label className = "empLabels">Notes</label>  
-    <input type="text" name="notes" className = "empFields" value={this.state.notes} onChange={this.handleChange} required/>
+    <input type="text" name="notes" className = "empFields" value={this.state.notes} onChange={this.handleChange}/>
     <button type="submit" id= "sub">Create</button>   
     </form>
     <p className='infoNote'>Additional information will be required after initial creation</p>

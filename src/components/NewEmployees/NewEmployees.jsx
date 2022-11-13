@@ -9,16 +9,16 @@ import * as employeeAPI from "../../utilities/employee-api"
 
 
    useEffect(() =>{
-    async function getEmployees() {
-      const employees = await employeeAPI.getEmployee();
+    async function employeeCompList() {
+      const employees = await employeeAPI.employeeCompList();
       setEmployees(employees);
     }
 
-    getEmployees();
+    employeeCompList();
   }, [])
 
-  async function handleDeleteEmps(id){
-    const deleteEmp = await employeeAPI.deleteEmps(id);
+  async function deleteEmployee(id){
+    const deleteEmp = await employeeAPI.deleteEmployee(id);
     window.location.reload()
   }
  //line 46ish add employee to company
@@ -32,15 +32,17 @@ return(
       <div className='employeeWrapWrap'>
       {employees.map(employee => 
         <div className='employeeWrap'>
-          <p className='entBody'>{employee.employeeName}</p>
+          <p className='entBody'>{employee.firstName+" "+employee.lastName}</p>
             {!hidden ? 
             <div>
-              <p className='entBody'>{employee.firstName+" "+LastName}</p>
-              <p className='entBody'>{employee.role}</p>
+              <p className='entBody'>{employee.title}</p>
+              <p className='entBody'>{employee.duties}</p>
+              <p className='entBody'>{employee.dob}</p>
               <p className='entBody'>{employee.credentials}</p>
+              <p className='entBody'>{employee.notes}</p>
             </div>:null}
          
-          <button className='delete' onClick={() => {handleDeleteEmps(employee._id)}}>Delete</button>
+          <button className='delete' onClick={() => {deleteEmployee(employee._id)}}>Delete</button>
         
                 
         <div>
