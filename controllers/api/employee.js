@@ -1,4 +1,4 @@
-const Company = require('../../models/company');
+// const Company = require('../../models/company');
 const Employee = require('../../models/employee');
 
 
@@ -8,22 +8,27 @@ const Employee = require('../../models/employee');
 //     //remove list in employees?
 // })
 
+// const company = Company.findById(req.params.id)
+// company.push(employee)
+//         company.save();
 
 async function createEmployee (req,res){
     try{
         req.body.user = req.user._id;
-        const company = Company.findById(req.params.id)
-        const employee = await Employee.create(req.body)
-        company.push(employee)
-        company.save();
+        const employee = await Employee.create(req.body);
+        console.log(req.body)
         res.json(employee)
-        
         }   
         catch(error){
             res.status(400).json(error);
             console.log("Failed to create new employee")
         }
     }
+
+// async function onboardEmployee (req,res){
+//     const company = Company.findById(req.params.id);
+    
+// }
 
 async function getEmployeeByAtt (req,res){
     try{
@@ -66,7 +71,7 @@ async function updateEmployee (req, res){
 
 async function deleteEmployee (req, res){
     try{
-    const employee = await employee.findByIdAndDelete(req.params.id);
+    const employee = await Employee.findByIdAndDelete(req.params.id);
     console.log(req.body)
     res.json(employee)
     }   

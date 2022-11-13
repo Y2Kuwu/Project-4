@@ -19,10 +19,10 @@ const companySchema = new Schema({
     // has array of employees
     //employees: [employeeSchema]
 
-    employees: [{
-        type:Schema.Types.ObjectId,
-        ref: 'Employee'
-      }]
+    // employees: [{
+    //     type:Schema.Types.ObjectId,
+    //     ref: 'Employee'
+    //   }]
     
 },
 {

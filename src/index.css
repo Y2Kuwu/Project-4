@@ -44,7 +44,7 @@ body {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    monospace, 'Merriweather', serif;;
 }
 
 #root {
@@ -173,25 +173,27 @@ button[type="submit"] {
 
 nav{
   outline-style: solid;
-  outline-width: 2px;
-  outline-color: whitesmoke;
+  outline-width: 4px;
+  outline-color: black;
   background-color: rgb(16, 114, 159);
 }
 
 
 .allEnterprises{
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Merriweather', serif;
   font-size: large;
   text-decoration: none;
   color: black;
+  text-align: center;
 }
+
 .allEnterprises:hover{
   color: rgb(46, 77, 131);
 }
 
 
 .newEnterprise{
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Merriweather', serif;
   font-size: large;
   text-decoration: none;
   color: black;
@@ -199,14 +201,16 @@ nav{
 .newEnterprise:hover{
   color: rgb(46, 77, 131);
 }
+
+
 .Enterprise{
   text-align: center;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Merriweather', serif;
   text-shadow: 2px 2px 2px white;
 }
 
 .userName{
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Merriweather', serif;
   font-size: large;
   text-decoration: none;
   color: black;
@@ -223,7 +227,7 @@ nav{
 }
 
 .welcome{
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Merriweather', serif;
   font-size: large;
   text-decoration: none;
   color: black;
@@ -231,7 +235,7 @@ nav{
 
 
 .logOut{
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Merriweather', serif;
   font-size: large;
   text-decoration: none;
   color: black;
@@ -240,7 +244,7 @@ nav{
   color: rgb(46, 77, 131);
 }
 .createEmployee{
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Merriweather', serif;
   font-size: large;
   text-decoration: none;
   color: black;
@@ -250,7 +254,7 @@ nav{
 }
 
 .timeOut{
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Merriweather', serif;
   text-decoration: none;
   color: white;
   outline-width: 4px;
@@ -266,7 +270,7 @@ nav{
   outline-color: #000;
 }
 #sub{
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Merriweather', serif;
   color: black;
   margin-inline: 25.5%;
   outline-offset: -6px;
@@ -281,7 +285,7 @@ nav{
 }
 .entFields{
   margin-top: 10px;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Merriweather', serif;
   outline-style: solid;
   /* outline-offset: 4px;
   outline-color: black; */
@@ -291,7 +295,7 @@ nav{
 }
 .entLabels{
   margin-top: 10px;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Merriweather', serif;
   color: black;
   margin-left: 2%; 
   text-shadow: 2px 2px 2px white;
@@ -300,7 +304,7 @@ nav{
   outline-offset: 2px;
   margin-right: 5%; */
 }
-.companyWrapWrap{
+/* .companyWrapWrap{
   background-color: rgb(16, 114, 159);
   outline-offset: 4px;
   outline-width: 4px;
@@ -321,9 +325,9 @@ nav{
   outline-color: black;
   outline-style: solid;
   outline-width: 2px;
-}
+} */
 .delete{
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Merriweather', serif;
   color:rgb(118, 100, 100);
   outline-width: 1px;
   outline-color: #000;
@@ -336,7 +340,7 @@ nav{
 }
 
 .update{
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Merriweather', serif;
   color:rgb(118, 100, 100);
   outline-width: 1px;
   outline-color: #000;
@@ -349,7 +353,7 @@ nav{
 
 .companyName{
   text-align: right;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Merriweather', serif;
   text-align: center;
   
 }
@@ -363,12 +367,12 @@ nav{
 }
 .newEmployee{
   text-align: center;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Merriweather', serif;
   text-shadow: 2px 2px 2px white;
 }
 .empLabels{
     margin-top: 10px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Merriweather', serif;
     color: black;
     margin-left: 2%; 
     text-shadow: 2px 2px 2px white;
@@ -379,7 +383,7 @@ nav{
 }
 .empFields{
   margin-top: 10px;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Merriweather', serif;
   outline-style: solid;
   /* outline-offset: 4px;
   outline-color: black; */
@@ -389,23 +393,25 @@ nav{
 }
 
 .details{
-  font-family: 'Courier New', Courier, monospace;
+  position: fixed;
+  font-family: 'Merriweather', serif;
   color:rgb(118, 100, 100);
   outline-width: 1px;
   outline-color: #000;
   outline-style: solid;
-  margin-right: 1200px;
-  margin-left: 150px;
-  margin-top: -60px;
+  margin-top: 100px;
+  align-items: left;
+
 }
 .details:hover{
   color:rgb(118, 120, 100);
   outline-color: green;
 }
 
+
 .enterprises{
   text-align: center;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Merriweather', serif;
   text-shadow: 2px 2px 2px white;
   margin-top: 20px;
 }
@@ -424,7 +430,7 @@ nav{
 }
 .change{
   color: white;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Merriweather', serif;
   display: flex;
   text-align: center;
   margin-left: 0px;
@@ -432,12 +438,32 @@ nav{
 .change:hover{
   color: green;
 }
-.entBody{
-  font-family: 'Courier New', Courier, monospace;
+.entName{
+  display: flex;
+  font-family: 'Merriweather', serif;
   text-shadow: 2px 2px 2px black;
+  justify-content: center;
+  font-size: 20px;
+  background-color: white;
+}
+
+.entBody{
+  display: flex;
+  font-family: 'Merriweather', serif;
+  text-shadow: 2px 2px 2px black;
+  justify-content: center;
+
+}
+.ent{
+  outline-width: 2px;
+  outline-style: solid;
+  outline-color: black;
+  background-color: white;
+  margin-left: 350px;
+  margin-right: 350px;
 }
 .infoNote{
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Merriweather', serif;
   text-shadow: 1px 1px 1px maroon;
   background-color: gray;
   outline: black;
@@ -453,3 +479,20 @@ nav{
   background-color: lightblue;
   padding: 5px;
 }
+
+.newEmployees{
+  font-family: 'Merriweather', serif;
+  font-size: large;
+  text-decoration: none;
+  color: black;
+}
+.newEmployees:hover{
+  color: rgb(46, 77, 131);
+}
+.newEmps{
+  text-align: center;
+  font-family: 'Merriweather', serif;
+  text-shadow: 2px 2px 2px white;
+  margin-top: 20px;
+}
+
