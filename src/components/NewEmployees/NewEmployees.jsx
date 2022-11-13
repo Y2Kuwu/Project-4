@@ -17,7 +17,7 @@ import * as employeeAPI from "../../utilities/employee-api"
     employeeCompList();
   }, [])
 
-  async function deleteEmployee(id){
+  async function deleteEmp(id){
     const deleteEmp = await employeeAPI.deleteEmployee(id);
     window.location.reload()
   }
@@ -42,7 +42,7 @@ return(
               <p className='entBody'>{employee.notes}</p>
             </div>:null}
          
-          <button className='delete' onClick={() => {deleteEmployee(employee._id)}}>Delete</button>
+          <button className='delete' onClick={() => {deleteEmp(employee._id)}}>Delete</button>
         
                 
         <div>
