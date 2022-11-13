@@ -27,7 +27,7 @@ return(
 
       <div className='banner'>
       <h1 className='newEmps'>New Employees</h1>      
-      <button className = "details" onClick={() => setHidden( y=> !y)}> Detailed view </button>
+      <button className = "details" onClick={() => setHidden( y=> !y)}> Details </button>
       </div>
       <div className='employeeWrapWrap'>
       {employees.map(employee => 
