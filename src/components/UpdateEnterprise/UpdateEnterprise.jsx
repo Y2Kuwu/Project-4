@@ -41,7 +41,7 @@ export default function UpdateCompany({companies}) {
 
  return (
 <div>
-    <h1 className = "Enterprise">Update Enterprise</h1>
+    <h1 className = "Enterprise">Update enterprise information</h1>
     <div className = "createEnt">
     <form autoComplete="off"  onSubmit={handleSubmit}>
     <label className='entLabels'>Name</label>
@@ -56,7 +56,6 @@ export default function UpdateCompany({companies}) {
     <input type="number" name="officeCount" className='entFields' value={company.officeCount} onChange={handleChange} required />
     <button type="submit" id = "sub">update</button>  
     </form>
-    <p className='infoNote'>Additional information will be required after initial creation</p>
     </div>
 
     </div>

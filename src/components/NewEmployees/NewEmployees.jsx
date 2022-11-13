@@ -2,6 +2,7 @@ import { DateWithoutTime } from 'epoq';
 import { useState, useEffect } from 'react';
 import * as employeeAPI from "../../utilities/employee-api"
 //import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 {/* <Link to= {`/UpdateCompany/${company._id}`} ><button className='update'>Update</button></Link> */}
     export default function NewEmployees() {
@@ -53,24 +54,10 @@ return(
                 <td className='entBody'>{employee.title}</td>
                 <td className='entBody'>Notes:</td>
                 <td className='entBody'>{employee.notes}</td>
-                
-                
-                
-                
-             
-              
-              
-             
-              
-              
-             
-              
-             
-              
             </div>:null}
          
           <button className='delete' onClick={() => {deleteEmp(employee._id)}}>Delete</button>
-        
+          <Link to= {`/UpdateEmployee/${employee._id}`} ><button className='update'>Update</button></Link>
                 
         <div>
         </div>

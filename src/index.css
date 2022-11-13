@@ -184,7 +184,9 @@ nav{
   font-size: large;
   text-decoration: none;
   color: black;
+  text-align: center;
 }
+
 .allEnterprises:hover{
   color: rgb(46, 77, 131);
 }
@@ -199,6 +201,8 @@ nav{
 .newEnterprise:hover{
   color: rgb(46, 77, 131);
 }
+
+
 .Enterprise{
   text-align: center;
   font-family: 'Merriweather', serif;
@@ -440,8 +444,6 @@ nav{
   text-shadow: 2px 2px 2px black;
   justify-content: center;
   font-size: 20px;
-  margin-left: 600px;
-  margin-right: 600px;
   background-color: white;
 }
 
@@ -457,8 +459,8 @@ nav{
   outline-style: solid;
   outline-color: black;
   background-color: white;
-  margin-left: 600px;
-  margin-right: 600px;
+  margin-left: 350px;
+  margin-right: 350px;
 }
 .infoNote{
   font-family: 'Merriweather', serif;
