@@ -1,6 +1,8 @@
 import { Component } from 'react';
 import { createEmployee } from '../../utilities/employee-api';
 
+
+
  class CreateEmployee extends Component {
 
   constructor(props){
@@ -27,15 +29,18 @@ import { createEmployee } from '../../utilities/employee-api';
   console.log(evt.target.name)
 };
 
+
+
 handleSubmit(evt){
   
    
     try {
       evt.preventDefault();
+     
     //const {firstName, lastName, title, duties, credentials, notes} = this.state;
     createEmployee(this.state,
     {
-    
+      
       // firstName: evt.firstName.value,
       // lastName: evt.lastName.value,
       // title: evt.title.value,
@@ -93,6 +98,10 @@ handleSubmit(evt){
     </div>
     </div>
     
+    
+     
+   
+
     )};
  }
 

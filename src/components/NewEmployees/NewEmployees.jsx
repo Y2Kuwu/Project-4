@@ -1,3 +1,4 @@
+import { DateWithoutTime } from 'epoq';
 import { useState, useEffect } from 'react';
 import * as employeeAPI from "../../utilities/employee-api"
 //import { Link } from 'react-router-dom';
@@ -6,7 +7,7 @@ import * as employeeAPI from "../../utilities/employee-api"
     export default function NewEmployees() {
       const [employees, setEmployees] = useState([]);
       const [hidden, setHidden] = useState(true);
-
+      const space = " ";
 
    useEffect(() =>{
     async function employeeCompList() {
@@ -17,6 +18,11 @@ import * as employeeAPI from "../../utilities/employee-api"
     employeeCompList();
   }, [])
 
+  // async function setDate(d){
+  //   let ndate = new DateWithoutTime(d)
+  //   console.log(ndate) ;
+  // }
+
   async function deleteEmp(id){
     const deleteEmp = await employeeAPI.deleteEmployee(id);
     window.location.reload()
@@ -24,22 +30,43 @@ import * as employeeAPI from "../../utilities/employee-api"
  //line 46ish add employee to company
 return(
  <main>
-
+      
       <div className='banner'>
       <h1 className='newEmps'>New Employees</h1>      
       <button className = "details" onClick={() => setHidden( y=> !y)}> Details </button>
       </div>
       <div className='employeeWrapWrap'>
       {employees.map(employee => 
+
         <div className='employeeWrap'>
-          <p className='entBody'>{employee.firstName+" "+employee.lastName}</p>
+          <p className='entName'>{employee.firstName +space+ employee.lastName}</p>
             {!hidden ? 
-            <div>
-              <p className='entBody'>{employee.title}</p>
-              <p className='entBody'>{employee.duties}</p>
-              <p className='entBody'>{employee.dob}</p>
-              <p className='entBody'>{employee.credentials}</p>
-              <p className='entBody'>{employee.notes}</p>
+            <div className='ent'>
+             
+                <td className='entBody'>Duties:</td>
+                <td className='entBody'>{employee.duties}</td>
+                <td className='entBody'>Date of Birth:</td>
+                <td className='entBody'>{employee.dob}</td>
+                <td className='entBody'>Credentials:</td>
+                <td className='entBody'>{employee.credentials}</td>
+                <td className='entBody'>Title:</td>
+                <td className='entBody'>{employee.title}</td>
+                <td className='entBody'>Notes:</td>
+                <td className='entBody'>{employee.notes}</td>
+                
+                
+                
+                
+             
+              
+              
+             
+              
+              
+             
+              
+             
+              
             </div>:null}
          
           <button className='delete' onClick={() => {deleteEmp(employee._id)}}>Delete</button>
