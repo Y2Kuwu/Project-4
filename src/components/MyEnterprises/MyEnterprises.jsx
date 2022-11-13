@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import * as companyAPI from "../../utilities/company-api";
 import { Link } from 'react-router-dom';
 
-    export default function MyEnterprise() {
+    export default function MyEnterprises() {
       const [companies, setCompanies] = useState([]);
       const [hidden, setHidden] = useState(true);
 

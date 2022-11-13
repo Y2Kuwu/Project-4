@@ -1,6 +1,4 @@
 import { Component } from 'react';
-import * as employeeAPI from '../../utilities/employee-api';
-import { useState } from 'react';
 import { createEmployee } from '../../utilities/employee-api';
  class CreateEmployee extends Component {
   //export default function CreateEmployee({employees}){
@@ -33,21 +31,21 @@ handleSubmit(evt){
    
     try {
       evt.preventDefault();
-    const {firstName, lastName, title, duties, credentials, notes} = this.state;
+    //const {firstName, lastName, title, duties, credentials, notes} = this.state;
     createEmployee(this.state,
     {
       // firstName: evt.firstName.value,
       // lastName: evt.lastName.value,
       // title: evt.title.value,
       // duties: evt.duties.value,
-      // credentials: evt.credentials.values,
-      // notes: evt.notes.values,
-      firstName:firstName,
-      lastName: lastName,
-      title: title,
-      duties: duties,
-      credentials: credentials,
-      notes: notes,
+      // credentials: evt.credentials.value,
+      // notes: evt.notes.value,
+      // firstName: firstName,
+      // lastName: lastName,
+      // title: title,
+      // duties: duties,
+      // credentials: credentials,
+      // notes: notes,
       
      
     })
@@ -56,7 +54,7 @@ handleSubmit(evt){
     //setEmployee(createEmp)
   
     alert('Successfully created new employee: ' + this.state.firstName + this.state.lastName + '!')
-    this.props.history.push('/');
+    //this.props.history.push('/');
   } catch {
     // An error happened on the server
     this.setState({ error: 'Employee creation failed' });

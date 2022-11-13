@@ -4,7 +4,7 @@
 import { Component } from 'react';
 import * as companyAPI from "../../utilities/company-api";
 import { Link } from 'react-router-dom';
-import MyEnterprise from '../MyEnterprises/MyEnterprises';
+import MyEnterprises from '../MyEnterprises/MyEnterprises';
     // export default function MyEnterprise() {
   
       export default class EditEnterprise extends Component{

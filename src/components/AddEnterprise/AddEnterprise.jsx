@@ -36,7 +36,7 @@ handleSubmit (evt) {
       officeCount : officeCount,
     })
     alert('Successfully created: ' + this.state.companyName + '!')
-    this.props.history.push('/');
+    //this.props.history.push('/');
     
   } catch {
     this.setState({ error: 'Company creation failed' });
