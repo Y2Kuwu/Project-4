@@ -1,7 +1,6 @@
 import { Component } from 'react';
 import { redirect } from 'react-router-dom';
 import { createCompany} from '../../utilities/company-api';
-// import {MyEnterprise} from '/components/MyEnterprises/MyEnterprises';
 import { Navigate } from 'react-router-dom';
 class AddEnterprise extends Component {
   constructor(props){
@@ -48,9 +47,6 @@ handleSubmit (evt) {
 render(){
   return (
     <div>
-      
-    
-      
     <h1 className = "Enterprise">New Enterprise</h1>
     <div className = "createEnt">
     <form autoComplete="off" onSubmit={this.handleSubmit}>

@@ -1,5 +1,5 @@
 const Company = require('../../models/company');
-const Employee = require('../../models/employee');
+//const Employee = require('../../models/employee');
 
 
 async function getCompany(req,res){
@@ -8,23 +8,25 @@ async function getCompany(req,res){
 }
 
 
-async function getOneCompany (req, res){
-    try{
-        req.body.user = req.user._id;
-        const company = await Company.findById(req.params.id);
-        console.log(req.body);
-        company.populate('employees').exec(function(err, company){
-            Employee.find({_id: {$nin: company.employees}})
-            //added employee population per company 
-            //remove list in employees?
-        })
-        res.json(company)
-    }
-    catch(error){
-        res.status(400).json(error);
-        console.log("Cannot find company details")
-    }
-}
+
+//rework this
+// async function getOneCompany (req, res){
+//     try{
+//         req.body.user = req.user._id;
+//         const company = await Company.findById(req.params.id);
+//         console.log(req.body);
+//         company.populate('employees').exec(function(err, company){
+//            // Employee.find({_id: {$nin: company.employees}})
+//             //added employee population per company 
+//             //remove list in employees?
+//         })
+//         res.json(company)
+//     }
+//     catch(error){
+//         res.status(400).json(error);
+//         console.log("Cannot find company details")
+//     }
+// }
 
 async function createCompany (req, res){
     try{
@@ -75,6 +77,6 @@ async function updateCompany (req, res){
         createCompany,
         getCompany,
         deleteCompany,
-        getOneCompany,
+        // getOneCompany,
         updateCompany,
     }

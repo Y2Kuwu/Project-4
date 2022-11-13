@@ -29,6 +29,7 @@ app.use(require('./config/checkToken'));
 // http://localhost:3001/api/users
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/company', require('./routes/api/company'));
+app.use('/api/employee', require('./routes/api/employee'));
 
 // app.use('/api/record', require('./routes/api/record'));
 

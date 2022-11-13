@@ -1,9 +1,6 @@
 import { useState, useEffect } from 'react';
 import * as companyAPI from "../../utilities/company-api";
-import { Component } from 'react';
 import { Link } from 'react-router-dom';
-import EditEnterprise from '../EditEnterprise/EditEnterprise'
-import UpdateCompany from '../UpdateEnterprise/UpdateEnterprise';
 
     export default function MyEnterprise() {
       const [companies, setCompanies] = useState([]);

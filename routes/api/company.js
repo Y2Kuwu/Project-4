@@ -9,7 +9,7 @@ router.get('/', CompanyCtrl.getCompany, ensureLoggedIn);
 router.post('/', CompanyCtrl.createCompany, ensureLoggedIn);
 // router.post('/createEmployee', CompanyCtrl.createEmployee);
 router.delete('/:id', CompanyCtrl.deleteCompany, ensureLoggedIn);
-router.get('/:id', CompanyCtrl.getOneCompany, ensureLoggedIn);
+// router.get('/:id', CompanyCtrl.getOneCompany, ensureLoggedIn);
 router.put('/:id', CompanyCtrl.updateCompany, ensureLoggedIn);
 
 module.exports = router;
