@@ -4,33 +4,73 @@ import { createEmployee } from '../../utilities/employee-api';
 
 
 
- class CreateEmployee extends Component {
+ export default class CreateEmployee extends Component {
 
   constructor(props){
   super(props);
-   const [creds, setCreds] = useState('');
-   const [duts, setDuties] = useState('');
-   const [nos, setNotes] = useState('');
-
-   const [cred, setCred] = useState([]);
-   const [duty, setDuty] = useState([]);
-   const [note, setNote] = useState([]);
+   
 
 
     this.state = {
       firstName: '',
       lastName: '',
       title: '',
-     // duties: '',
       dob: '',
-     // credentials: '',
-     // notes: '',
+      
+      duties: [],
+      dv: '',
+      credentials: [],
+      cv: '',
+      notes: [],
+      nv: '',
       }
      this.handleChange = this.handleChange.bind(this);
      this.handleSubmit = this.handleSubmit.bind(this);
     }
+    onChangeDuty = evt =>{
+      this.setState({dv: evt.target.value})
+    };
+    onChangeCred = evt =>{
+      this.setState({cv: evt.target.value})
+    };
+    onChangeNote = evt =>{
+      this.setState({nv: evt.target.value})
+    };
 
 
+    onAddDuty = () => {
+      this.setState(state =>{
+        const duties = state.duties.concat(state.value);
+        console.log();
+        return {
+          duties,
+          dv: '',
+        };
+      });
+    }
+
+    onAddCred = () => {
+      this.setState(s =>{
+        const credentials = s.credentials.push(s.value);
+        
+        return {
+          credentials,
+          cv: '',
+          
+        }
+        
+      })
+    }
+
+    onAddNote = () => {
+      this.setState(s =>{
+        const notes = s.notes.push(s.value);
+        return {
+          notes,
+          nv: '',
+        }
+      })
+    }
 
  handleChange(evt){
   this.setState({[evt.target.name]: evt.target.value});
@@ -48,19 +88,6 @@ handleSubmit(evt){
     //const {firstName, lastName, title, duties, credentials, notes} = this.state;
     createEmployee(this.state,
     {
-      
-      // firstName: evt.firstName.value,
-      // lastName: evt.lastName.value,
-      // title: evt.title.value,
-      // duties: evt.duties.value,
-      // credentials: evt.credentials.value,
-      // notes: evt.notes.value,
-      // firstName: firstName,
-      // lastName: lastName,
-      // title: title,
-      // duties: duties,
-      // credentials: credentials,
-      // notes: notes,
       
      
     })
@@ -92,14 +119,19 @@ handleSubmit(evt){
     <input type="text" name="lastName" className = "empFields" value={this.state.lastName} onChange={this.handleChange} required />
     <label className = "empLabels">Title</label>  
     <input type="text" name="title" className = "empFields" value={this.state.title} onChange={this.handleChange} required />
-    <label className = "empLabels">Duties</label>  
-    <input type = "array" name="duties" className = "empFields" value={this.state.duties} onChange={this.handleChange} required />
     <label className = "empLabels">DOB</label>  
     <input type="date" name="dob" className = "empFields" value={this.state.dob} onChange={this.handleChange} required />
-    <label className = "empLabels">Credential list</label>  
-    <input type="text" name="credentials" className = "empFields" value={this.state.credentials} onChange={this.handleChange} required />
+    
+    <label className = "empLabels">Duties</label>  
+    <input type="text" value={this.state.dv} onChange={this.onChangeDuty}/>
+    <button type="button" onClick={this.onAddDuty} disabled={!this.state.dv}>Add</button>
+   
+    
+    {/* <input type = "array" name="duties" className = "empFields" value={this.state.duties} onChange={this.handleChange} required /> */}
+    {/* <label className = "empLabels">Credential list</label>  
+    <input type="array" name="credentials" className = "empFields" value={this.state.credentials} onChange={this.handleChange} required />
     <label className = "empLabels">Notes</label>  
-    <input type="text" name="notes" className = "empFields" value={this.state.notes} onChange={this.handleChange}/>
+    <input type="array" name="notes" className = "empFields" value={this.state.notes} onChange={this.handleChange}/> */}
     <button type="submit" id= "sub">Create</button>   
     </form>
     <p className='infoNote'>Additional information will be required after initial creation</p>
@@ -113,4 +145,3 @@ handleSubmit(evt){
     )};
  }
 
-export default CreateEmployee;
