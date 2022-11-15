@@ -40,8 +40,7 @@ import { createEmployee } from '../../utilities/employee-api';
 
     onAddDuty = () => {
       this.setState(state =>{
-        const duties = state.duties.concat(state.value);
-        console.log();
+        const duties = state.duties.concat(state.dv);
         return {
           duties,
           dv: '',
@@ -50,26 +49,23 @@ import { createEmployee } from '../../utilities/employee-api';
     }
 
     onAddCred = () => {
-      this.setState(s =>{
-        const credentials = s.credentials.push(s.value);
-        
+      this.setState(state =>{
+        const credentials = state.credentials.concat(state.cv);
         return {
           credentials,
           cv: '',
-          
-        }
-        
-      })
+        };
+      });
     }
 
     onAddNote = () => {
-      this.setState(s =>{
-        const notes = s.notes.push(s.value);
+      this.setState(state =>{
+        const notes = state.notes.concat(state.nv);
         return {
           notes,
           nv: '',
-        }
-      })
+        };
+      });
     }
 
  handleChange(evt){
@@ -123,9 +119,17 @@ handleSubmit(evt){
     <input type="date" name="dob" className = "empFields" value={this.state.dob} onChange={this.handleChange} required />
     
     <label className = "empLabels">Duties</label>  
-    <input type="text" value={this.state.dv} onChange={this.onChangeDuty}/>
-    <button type="button" onClick={this.onAddDuty} disabled={!this.state.dv}>Add</button>
+    <input type="text" value={this.state.dv} onChange={this.onChangeDuty} className = "empFields"/>
+    <button type="button" onClick={this.onAddDuty} disabled={!this.state.dv} id= "sub">Add</button>
    
+    <label className = "empLabels">Credentials</label>  
+    <input type="text" value={this.state.cv} onChange={this.onChangeDuty} className = "empFields"/>
+    <button type="button" onClick={this.onAddCred} disabled={!this.state.cv} id= "sub">Add</button>
+
+    <label className = "empLabels">Notes</label>  
+    <input type="text" value={this.state.nv} onChange={this.onChangeDuty} className = "empFields"/>
+    <button type="button" onClick={this.onAddNote} disabled={!this.state.nv} id= "sub">Add</button>
+
     
     {/* <input type = "array" name="duties" className = "empFields" value={this.state.duties} onChange={this.handleChange} required /> */}
     {/* <label className = "empLabels">Credential list</label>  
