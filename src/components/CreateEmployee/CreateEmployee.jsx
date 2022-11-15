@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Component } from 'react';
 import { createEmployee } from '../../utilities/employee-api';
 
@@ -7,16 +8,23 @@ import { createEmployee } from '../../utilities/employee-api';
 
   constructor(props){
   super(props);
-  // const [employee, setEmployee] = useState({
+   const [creds, setCreds] = useState('');
+   const [duts, setDuties] = useState('');
+   const [nos, setNotes] = useState('');
+
+   const [cred, setCred] = useState([]);
+   const [duty, setDuty] = useState([]);
+   const [note, setNote] = useState([]);
+
 
     this.state = {
       firstName: '',
       lastName: '',
       title: '',
-      duties: '',
+     // duties: '',
       dob: '',
-      credentials: '',
-      notes: '',
+     // credentials: '',
+     // notes: '',
       }
      this.handleChange = this.handleChange.bind(this);
      this.handleSubmit = this.handleSubmit.bind(this);
