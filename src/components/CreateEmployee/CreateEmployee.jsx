@@ -4,29 +4,30 @@ import { createEmployee } from '../../utilities/employee-api';
 
 
 
- export default class CreateEmployee extends Component {
+ class CreateEmployee extends Component {
 
   constructor(props){
   super(props);
-   
-
-
     this.state = {
       firstName: '',
       lastName: '',
       title: '',
       dob: '',
-      
-      duties: [],
+
+      //duties: [''],
       dv: '',
-      credentials: [],
+     // credentials: [''],
       cv: '',
-      notes: [],
+     // notes: [''],
       nv: '',
-      }
-     this.handleChange = this.handleChange.bind(this);
-     this.handleSubmit = this.handleSubmit.bind(this);
     }
+  
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+    
+    
     onChangeDuty = evt =>{
       this.setState({dv: evt.target.value})
     };
@@ -41,6 +42,7 @@ import { createEmployee } from '../../utilities/employee-api';
     onAddDuty = () => {
       this.setState(state =>{
         const duties = state.duties.concat(state.dv);
+        console.log(duties);
         return {
           duties,
           dv: '',
@@ -51,6 +53,7 @@ import { createEmployee } from '../../utilities/employee-api';
     onAddCred = () => {
       this.setState(state =>{
         const credentials = state.credentials.concat(state.cv);
+        console.log(credentials);
         return {
           credentials,
           cv: '',
@@ -61,6 +64,7 @@ import { createEmployee } from '../../utilities/employee-api';
     onAddNote = () => {
       this.setState(state =>{
         const notes = state.notes.concat(state.nv);
+        console.log(notes);
         return {
           notes,
           nv: '',
@@ -121,13 +125,15 @@ handleSubmit(evt){
     <label className = "empLabels">Duties</label>  
     <input type="text" value={this.state.dv} onChange={this.onChangeDuty} className = "empFields"/>
     <button type="button" onClick={this.onAddDuty} disabled={!this.state.dv} id= "sub">Add</button>
-   
+    <></>
+
+
     <label className = "empLabels">Credentials</label>  
-    <input type="text" value={this.state.cv} onChange={this.onChangeDuty} className = "empFields"/>
+    <input type="text" value={this.state.cv} onChange={this.onChangeCred} className = "empFields"/>
     <button type="button" onClick={this.onAddCred} disabled={!this.state.cv} id= "sub">Add</button>
 
     <label className = "empLabels">Notes</label>  
-    <input type="text" value={this.state.nv} onChange={this.onChangeDuty} className = "empFields"/>
+    <input type="text" value={this.state.nv} onChange={this.onChangeNote} className = "empFields"/>
     <button type="button" onClick={this.onAddNote} disabled={!this.state.nv} id= "sub">Add</button>
 
     
@@ -148,4 +154,4 @@ handleSubmit(evt){
 
     )};
  }
-
+ export default CreateEmployee;

@@ -6,10 +6,11 @@ const employeeSchema = new Schema({
     firstName: {type: String},
     lastName: {type: String},
     title :{type: String},
-    duties:{type:Array},
     dob : {type: Date},
+    
+    duties:{type:Array},
     credentials: {type: Array},
-    notes: {type:String, required:false},
+    notes: {type:Array, required:false},
     //isUser: {type: Boolean, default: false},
     //isSuper: { type: Boolean, required: true, default: false},
     // record: recordSchema,
